@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+# 徐琦的博客 #
 
-You can use the [editor on GitHub](https://github.com/nusr/nusr.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## 笔记
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### javascript ###
 
-### Markdown
+1. [javascript基础](https://github.com/nusr/frontend_note/javascript/js_basic.md)
+1. [javascript函数](https://github.com/nusr/frontend_note/javascript/jsFunction.md)
+1. [javascript事件特效](https://github.com/nusr/frontend_note/javascript/jsEvent.md)
+1. [javascript面向对象编程](https://github.com/nusr/frontend_note/javascript/OOP.md)
+1. [canvas基础使用](https://github.com/nusr/frontend_note/javascript/canvas.md)
+1. [jQuery使用](https://github.com/nusr/frontend_note/javascript/jQuery.md)
+1. [javascript编码规范](https://github.com/nusr/frontend_note/javascript/javascriptStyleRules.md)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 代码 ##
 
-```markdown
-Syntax highlighted code block
+- [绘制分形叶](https://github.com/nusr/frontend_note/tree/master/code/leaf.html)
+- [绘制分形三角](https://github.com/nusr/frontend_note/tree/master/code/triangle.html)
+- [绘制时钟](https://github.com/nusr/frontend_note/tree/master/code/canvasClock.html)
+- [绘制绚丽倒计时](https://github.com/nusr/frontend_note/tree/master/code/countDown/countDown.html)
+- [绘制一个动态的小球，运动曲线为抛物线](https://github.com/nusr/frontend_note/tree/master/code/dynamicBall.html)
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nusr/nusr.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
