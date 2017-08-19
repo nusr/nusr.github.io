@@ -24,18 +24,22 @@
 #### css练习
 
 - [css计数器](https://nusr.github.io/code/css/cssCounter.html)
+- [css3浮雕文字](https://nusr.github.io/code/css/css3Words.html)
+- [css3弹性布局](https://nusr.github.io/code/css/cssFlexBox.html)
+- [css3移动端导航条](https://nusr.github.io/code/css/cssMobileNav.html)
 
-#### canvas练习
+#### html5练习
 
-- [绘制分形叶](https://nusr.github.io/code/canvas/leaf.html)
-- [绘制分形三角](https://nusr.github.io/code/canvas/triangle.html)
-- [绘制时钟](https://nusr.github.io/code/canvas/canvasClock.html)
-- [绘制绚丽倒计时](https://nusr.github.io/code/canvas/countDown/countDown.html)
-- [绘制一个动态的小球，运动曲线为抛物线](https://nusr.github.io/code/canvas/dynamicBall.html)
+- [canvas绘制分形叶](https://nusr.github.io/code/canvas/leaf.html)
+- [canvas绘制分形三角](https://nusr.github.io/code/canvas/triangle.html)
+- [canvas绘制时钟](https://nusr.github.io/code/canvas/canvasClock.html)
+- [canvas绘制绚丽倒计时](https://nusr.github.io/code/canvas/countDown/countDown.html)
+- [canvas绘制一个动态的小球，运动曲线为抛物线](https://nusr.github.io/code/canvas/dynamicBall.html)
+- [localStorage实现简单网站列表](https://nusr.github.io/code/html/html5Site.html)
 
 #### js练习
 
-- [兼容工具包](https://nusr.github.io/code/js/common.js)
+- [别踩白块儿游戏](https://nusr.github.io/code/js/Don't-step-on-white-patch/index.html)
 
 ## 技术笔记
 

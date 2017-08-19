@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>别踩白块儿</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+    body {
+        background-color: #008694;
+        font: 12px/20px 'Microsoft Yahei';
+    }
+
+    header {
+        text-align: center;
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    header div {
+        color: #fa3c3c;
+        font-weight: 700;
+        font-size: 24px;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    #block-container {
+        width: 402px;
+        height: 402px;
+        margin: 50px auto;
+        background-color: #55d769;
+        border: 5px solid #000;
+        position: relative;
+    }
+
+    #block-container .whiteBlock {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        position: absolute;
+        border: 1px solid #000;
+    }
+
+    #block-container .blackBlock {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border: 1px solid #000;
+        font: 400 20px Arial;
+        text-align: center;
+        color: #fff;
+    }
+
+    #block-container #info {
+        z-index: 9999;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #55d769;
+        text-align: center;
+        width: 100px;
+        margin: 0 auto;
+    }
+
+    #block-container #info p {
+        font-size: 24px;
+    }
+
+    #block-container #info a {
+        text-decoration: none;
+        color: #fff;
+        display: inline-block;
+        padding: 10px;
+        background-color: #55d769;
+        border-radius: 10px;
+    }
+
+    #block-container #info #getTime {
+        margin-top: 135px;
+    }
+    </style>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>别踩白块儿</h1>
+        <div>
+            <span id="timeCount">0.000</span>秒
+        </div>
+    </header>
+    <div id="block-container">
+        <div class="whiteBlock" id="whiteBlock-0-0"></div>
+        <div class="whiteBlock" id="whiteBlock-0-1"></div>
+        <div class="whiteBlock" id="whiteBlock-0-2"></div>
+        <div class="whiteBlock" id="whiteBlock-0-3"></div>
+        <div class="whiteBlock" id="whiteBlock-1-0"></div>
+        <div class="whiteBlock" id="whiteBlock-1-1"></div>
+        <div class="whiteBlock" id="whiteBlock-1-2"></div>
+        <div class="whiteBlock" id="whiteBlock-1-3"></div>
+        <div class="whiteBlock" id="whiteBlock-2-0"></div>
+        <div class="whiteBlock" id="whiteBlock-2-1"></div>
+        <div class="whiteBlock" id="whiteBlock-2-2"></div>
+        <div class="whiteBlock" id="whiteBlock-2-3"></div>
+        <div class="whiteBlock" id="whiteBlock-3-0"></div>
+        <div class="whiteBlock" id="whiteBlock-3-1"></div>
+        <div class="whiteBlock" id="whiteBlock-3-2"></div>
+        <div class="whiteBlock" id="whiteBlock-3-3"></div>
+    </div>
+</body>
+
+</html>
