@@ -207,7 +207,7 @@ function factor(opts ,count,current) {
 		_zTree: null,
 		_headers: [],
 		_header_offsets: [],
-		_header_nodes: [{ id:1, pId:0, name:"Table of Content",open:true}],
+		_header_nodes: [{ id:1, pId:0, name:"",open:true}],
 		debug: true,
 		highlight_offset: 0,
 		highlight_on_scroll: true,
@@ -231,21 +231,21 @@ function factor(opts ,count,current) {
 		is_highlight_selected_line: true,
 		step: 100,
 		ztreeStyle: {
-			width:'260px',
+			width:'200px',
 			overflow: 'auto',
 			position: 'fixed',
 			'z-index': 2147483647,
-			border: '0px none',
+			border: '1px solid #0094ff',
 			left: '0px',
 			bottom: '0px',
-			// height:'100px'
+			height:'100px'
 		},
 		ztreeSetting: {
 			view: {
-				dblClickExpand: false,
+				dblClickExpand: true,
 				showLine: true,
-				showIcon: false,
-				selectedMulti: false
+				showIcon: true,
+				selectedMulti: true
 			},
 			data: {
 				simpleData: {
