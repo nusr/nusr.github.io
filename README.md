@@ -23,19 +23,19 @@
 
 #### css练习
 
-- [css计数器](css/cssCounter.html)
+- [css计数器](https://nusr.github.io/code/css/cssCounter.html)
 
 #### canvas练习
 
-- [绘制分形叶](canvas/leaf.html)
-- [绘制分形三角](canvas/triangle.html)
-- [绘制时钟](canvas/canvasClock.html)
-- [绘制绚丽倒计时](canvas/countDown/countDown.html)
-- [绘制一个动态的小球，运动曲线为抛物线](canvas/dynamicBall.html)
+- [绘制分形叶](https://nusr.github.io/code/canvas/leaf.html)
+- [绘制分形三角](https://nusr.github.io/code/canvas/triangle.html)
+- [绘制时钟](https://nusr.github.io/code/canvas/canvasClock.html)
+- [绘制绚丽倒计时](https://nusr.github.io/code/canvas/countDown/countDown.html)
+- [绘制一个动态的小球，运动曲线为抛物线](https://nusr.github.io/code/canvas/dynamicBall.html)
 
 #### js练习
 
-- [兼容工具包](js/common.js)
+- [兼容工具包](https://nusr.github.io/code/js/common.js)
 
 ## 技术笔记
 
