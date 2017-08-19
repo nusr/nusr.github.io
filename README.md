@@ -1,3 +1,9 @@
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width,maximum-scale=2">
+<meta name="description" content="nusr.github.io : Xu Qi的博客 ">
+<meta name="keywords" content="HTML, CSS, JS, JavaScript, front-end, open source, web developer">
+<meta name="author" content="Xu Qi">
+
 # Steve的博客
 
 ## 实战项目
@@ -15,11 +21,11 @@
 
 - [自己动手封装的mini版jQuery](https://github.com/nusr/min-jQuery)
 
-### [2048](https://github.com/nusr/2048)
+### 2048
 
 - [2048](https://github.com/nusr/2048)
 
-### [日常练习](https://github.com/nusr/demo)
+### 日常练习
 
 #### css练习
 
@@ -43,7 +49,7 @@
 
 ## 技术笔记
 
-### [前端基础](https://github.com/nusr/frontend_note)
+### 前端基础
 
 1. HTML
     - [HTML基础](https://github.com/nusr/frontend_note/blob/master/html/html_basic.md)
@@ -67,7 +73,7 @@
     - [javaScript BOM](https://github.com/nusr/frontend_note/blob/master/javascript/jsBOM.md)
     - [javascript经验](https://github.com/nusr/frontend_note/blob/master/javascript/knack.md)
 
-### [网页布局](https://github.com/nusr/frontend_note) ##
+### 网页布局
 
 1. [固定宽度布局](https://github.com/nusr/frontend_note/blob/master/css/eBusiness.md)
 1. [流式布局](https://github.com/nusr/frontend_note/blob/master/javascript/mobileBasic.md)
@@ -75,40 +81,40 @@
 1. [响应式布局](https://github.com/nusr/frontend_note/blob/master/javascript/responsiveDesign.md)
 1. [网站](https://github.com/nusr/frontend_note/blob/master/site.md)
 
-### [代码规范](https://github.com/nusr/frontend_note)
+### 代码规范
 
 1. [CSS代码规范](https://github.com/nusr/frontend_note/blob/master/css/cssStyleRules.md)
 1. [HTML代码规范](https://github.com/nusr/frontend_note/blob/master/html/htmlStyleRules.md)
 1. [JavaScript代码规范](https://github.com/nusr/frontend_note/blob/master/javascript/javascriptStyleRules.md)
 
-### [javascript库](https://github.com/nusr/frontend_note) ##
+### javascript库
 
 1. [jQuery.js](https://github.com/nusr/frontend_note/blob/master/javascript/jQuery.md)
 1. [Zepto.js](https://github.com/nusr/frontend_note/blob/master/javascript/Zeptojs.md)
 
-### [CSS预处理](https://github.com/nusr/frontend_note)
+### CSS预处理
 
 1. [Less](https://github.com/nusr/frontend_note/blob/master/css/less.md)
 1. [Sass](https://github.com/nusr/frontend_note/blob/master/css/sass.md)
 
-### [面向对象编程](https://github.com/nusr/frontend_note)
+### 面向对象编程
 
 1. [面向对象](https://github.com/nusr/frontend_note/blob/master/javascript/OOP.md)
 1. [数据结构](https://github.com/nusr/frontend_note/blob/master/javascript/dataStructures.md)
 1. [异步编程](https://github.com/nusr/frontend_note/blob/master/javascript/AsynchronousProgramming.md)
 1. [函数式编程](https://github.com/nusr/frontend_note/blob/master/javascript/functionalProgramming.md)
 
-### [传输数据](https://github.com/nusr/frontend_note)
+### 传输数据
 
 1. [JSON](https://github.com/nusr/frontend_note/blob/master/javascript/JSON.md)
 1. [XML](https://github.com/nusr/frontend_note/blob/master/javascript/XML.md)
 
-### [图形处理](https://github.com/nusr/frontend_note)
+### 图形处理
 
 1. [canvas](https://github.com/nusr/frontend_note/blob/master/javascript/canvas.md)
 1. [SVG](https://github.com/nusr/frontend_note/blob/master/javascript/SVG.md)
 
-### [服务端开发](https://github.com/nusr/frontend_note)
+### 服务端开发
 
 1. [AJAX](https://github.com/nusr/frontend_note/blob/master/javascript/AJAX.md)
 1. [php](https://github.com/nusr/frontend_note/blob/master/php/phpBasic.md)
@@ -116,7 +122,7 @@
 1. [http](https://github.com/nusr/frontend_note/blob/master/javascript/http.md)
 1. [ECMAscript6](https://github.com/nusr/frontend_note/blob/master/javascript/ES6.md)
 
-### [工具](https://github.com/nusr/frontend_note)
+### 工具
 
 1. [gulp](https://github.com/nusr/frontend_note/blob/master/tool/gulp.md)
 1. [webpack](https://github.com/nusr/frontend_note/blob/master/tool/webpack.md)
@@ -125,19 +131,19 @@
 1. [npm](https://github.com/nusr/frontend_note/blob/master/tool/npm.md)
 1. [yarn](https://github.com/nusr/frontend_note/blob/master/tool/yarn.md)
 
-### [框架](https://github.com/nusr/frontend_note)
+### 框架
 
 1. [Vue.js](https://github.com/nusr/frontend_note/blob/master/javascript/vuejs.md)
 1. [angular.js](https://github.com/nusr/frontend_note/blob/master/javascript/angular.js.md)
 1. [react](https://github.com/nusr/frontend_note/blob/master/javascript/react.md)
 
-### [微信](https://github.com/nusr/frontend_note)
+### 微信开发
 
 1. [小程序开发](https://github.com/nusr/frontend_note/blob/master/javascript/weChatApplet.md)
 1. 公众号开发
 
-### [编程杂记](https://github.com/nusr/noteOfLearning)
+### 编程杂记
 
 - [编程杂记](https://github.com/nusr/noteOfLearning)
 
-<footer>By 徐琦</footer>
+<footer><a href="https://github.com/nusr/nusr.github.io">By 徐琦</a></footer>
