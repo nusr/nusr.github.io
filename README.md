@@ -1,4 +1,4 @@
-# 徐琦的博客
+# Steve的博客
 
 ## 实战项目
 
@@ -135,3 +135,5 @@
 ### [编程杂记](https://github.com/nusr/noteOfLearning)
 
 - [编程杂记](https://github.com/nusr/noteOfLearning)
+
+<footer>By 徐琦</footer>
