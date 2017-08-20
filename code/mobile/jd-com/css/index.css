@@ -1,0 +1,217 @@
+.jd_layout {
+    width: 100%;
+    /*height: 1000px;*/
+    max-width: 640px;
+    min-width: 320px;
+    background-color: #eee;
+    margin: 0 auto;
+}
+
+.jd_search {
+    height: 40px;
+    max-width: 640px;
+    width: 100%;
+    background-color: rgba(233,35,34,1);
+    position: fixed;
+    z-index: 999;
+}
+
+.jd_searchBox {
+    height: 100%;
+    width: 100%;
+    padding:0 50px 0 75px;
+}
+.jd_searchBox::before{
+    content: "";
+    width: 25px;
+    height: 31px;
+    background: url(../images/jd-sprites.png) -56px -104px / 200px 200px;
+    position: absolute;
+    top:5px;
+    left:80px;
+}
+.jd_searchBox >input{
+    width: 100%;
+    height: 30px;
+    margin-top:5px;
+    border-radius: 15px;
+    padding-left:30px;
+}
+.jd_logo,.jd_login{
+    position: absolute;
+    height: 100%;
+    top:5px;
+}
+.jd_logo{
+    width: 55px;
+    height: 33px;
+    background: url(../images/jd-sprites.png) 0 -107px / 200px 200px;
+    left:10px;
+}
+.jd_login{
+    right: 13px;
+    color:#fff;
+    line-height: 30px;
+}
+.jd_login:hover{
+    color: #fff;
+}
+
+.jd_banner{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.jd_bannerImg{
+    /*width: 800%;*/
+    position: relative;
+
+}
+
+.jd_bannerImg li{
+    /*width:12.5%;*/
+    float: left;
+}
+.jd_bannerImg li a img{
+    width: 100%;
+    display: block;
+}
+.jd_bannerDots {
+    width: 128px;
+    height: 6px;
+    position: absolute;
+    bottom:10px;
+    left:50%;
+    margin-left:-64px;
+}
+.jd_bannerDots li{
+    width: 6px;
+    height: 6px;
+    border:1px solid #fff;
+    border-radius: 3px;
+    float: left;
+    margin:0 5px;
+}
+.jd_bannerDots li.active{
+    background-color: #fff;
+}
+
+.jd_nav{
+    width: 100%;
+    background-color: #fff;
+    padding:10px 0;
+}
+.jd_navImg{
+    width: 100%;
+
+}
+.jd_navImg li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    margin-top: 5px;
+}
+.jd_navImg li a img{
+    width: 50px;
+}
+.jd_navImg li a p{
+    line-height: 25px;
+}
+
+.jd_product{
+    width: 100%;
+}
+.jd_productBox{
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px #ccc;
+}
+.jd_pbTitle{
+    width: 100%;
+    margin-bottom:-16px;
+}
+
+.jd_pbTitle h3{
+    line-height: 30px;
+    padding-left:25px;
+    position: relative;
+    color:#666;
+}
+.jd_pbTitle h3::before{
+    content: '';
+    width: 3px;
+    height: 60%;
+    background-color: #e92322;
+    position: absolute;
+    left:15px;
+    top:6px;
+}
+.bb{
+    border-bottom: 1px solid #ccc;
+}
+.jd_content{
+    width: 100%;
+}
+.a_w50{
+    width: 50%;
+}
+.bl{
+    border-left:1px solid #ccc;
+}
+
+
+.jd_left.fl{
+    padding-left:30px;
+    position: relative;
+}
+.jd_left.fl>span:nth-child(2){
+    color:#e92322;
+    padding:0 10px;
+}
+.jd_tip{
+    margin-top:10px;
+    padding:10px 0 30px 0 ;
+}
+.jd_tip .jd_icon{
+    width: 20px;
+    height: 20px;
+    background:url(../images/jd-sprites.png) no-repeat -85px -112px / 200px 200px;
+    position: absolute;
+    top:-3px;
+    left:10px;
+}
+.jd_left.fl .jd_time span{
+    color:#fff;
+    width: 12px;
+    text-align: center;
+    background-color: #000;
+    display: inline-block;
+}
+.jd_left.fl .jd_time span:nth-child(3n){
+    background-color: #fff;
+    color:#000;
+}
+.jd_right.fr{
+    color:#666;
+    padding-right:10px;
+}
+.jd_detail{
+    padding-bottom:20px;
+}
+.jd_detail a img{
+    width: 100%;
+    display:block;
+}
+.jd_detail ul{
+    text-align: center;
+}
+.jd_detail ul li {
+    width: 33.33%;
+    float: left;
+}
+.jd_detail ul li a{
+}
+.jd_detail ul li a img{
+    width: 60%;
+    display: inline-block;
+}
