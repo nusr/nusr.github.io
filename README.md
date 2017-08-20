@@ -4,7 +4,7 @@
 <meta name="keywords" content="HTML, CSS, JS, JavaScript, front-end, open source, web developer">
 <meta name="author" content="Xu Qi">
 
-# Steve的博客
+# 徐琦的博客
 
 ## 实战项目
 
@@ -21,31 +21,38 @@
 
 - [自己动手封装的mini版jQuery](https://github.com/nusr/min-jQuery)
 
-### 2048
+### 游戏
 
 - [2048](https://github.com/nusr/2048)
+- [别踩白块儿游戏](https://nusr.github.io/code/js/Don't-step-on-white-patch/index.html)
+
+### 模仿页面
+
+
+#### pc端
+
+- [360首页](https://nusr.github.io/code/pc/index-360/index.html)
+
+### 移动端
+
+- [京东首页](https://nusr.github.io/code/mobile/jd-com/index.html)
+
+### 响应式
+
+- [微金所](https://nusr.github.io/code/responseSite/wjs/index.html)
 
 ### 日常练习
-
-#### css练习
 
 - [css计数器](https://nusr.github.io/code/css/cssCounter.html)
 - [css3浮雕文字](https://nusr.github.io/code/css/css3Words.html)
 - [css3弹性布局](https://nusr.github.io/code/css/cssFlexBox.html)
 - [css3移动端导航条](https://nusr.github.io/code/css/cssMobileNav.html)
-
-#### html5练习
-
 - [canvas绘制分形叶](https://nusr.github.io/code/canvas/leaf.html)
 - [canvas绘制分形三角](https://nusr.github.io/code/canvas/triangle.html)
 - [canvas绘制时钟](https://nusr.github.io/code/canvas/canvasClock.html)
 - [canvas绘制绚丽倒计时](https://nusr.github.io/code/canvas/countDown/countDown.html)
 - [canvas绘制一个动态的小球，运动曲线为抛物线](https://nusr.github.io/code/canvas/dynamicBall.html)
 - [localStorage实现简单网站列表](https://nusr.github.io/code/html/html5Site.html)
-
-#### js练习
-
-- [别踩白块儿游戏](https://nusr.github.io/code/js/Don't-step-on-white-patch/index.html)
 
 ## 技术笔记
 
@@ -146,4 +153,4 @@
 
 - [编程杂记](https://github.com/nusr/noteOfLearning)
 
-<footer><a href="https://github.com/nusr/nusr.github.io">By 徐琦</a></footer>
+[By 徐琦](https://github.com/nusr/nusr.github.io)
