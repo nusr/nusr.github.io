@@ -1,0 +1,260 @@
+body {
+    margin: 0;
+}
+
+.one {
+    background-color: skyblue;
+    padding-top: 100px;
+}
+
+.one .logo {
+    background: url(../images/logo.png) no-repeat center;
+    height: 186px;
+}
+
+.one .text {
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.one .info {
+    background: url(../images/info_1.png) no-repeat center;
+    height: 96px;
+}
+
+.two {
+    background-color: yellowgreen;
+}
+
+.two > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.two .shield {
+    width: 480px;
+}
+
+.two .info {
+    background: url(../images/info_2.png) no-repeat bottom right;
+    height: 309px;
+    width: 635px;
+}
+
+.three {
+    background-color: skyblue;
+    position: relative;
+    overflow: hidden;
+}
+
+.three > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.three .info {
+    background: url(../images/info_3.png) no-repeat;
+    height: 278px;
+    width: 631px;
+}
+
+.three .circle {
+    background: url(../images/circle.png) no-repeat;
+    height: 449px;
+    width: 453px;
+
+}
+
+.three .rocket {
+    background: url(../images/rocket.png) no-repeat;
+    height: 204px;
+    width: 203px;
+    position: absolute;
+    bottom: -204px;
+    left: 0;
+
+}
+
+.four {
+    background-color: purple;
+
+}
+
+.four > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.four .search {
+    width: 529px;
+    height: 480px;
+    position: relative;
+    align-self: flex-end;
+}
+
+.four .searchBox {
+    background: url(../images/search.png) no-repeat;
+    height: 66px;
+}
+
+.four .key {
+    background: url(../images/key.png) no-repeat;
+    height: 22px;
+    width: 99px;
+    position: absolute;
+    top: 22px;
+    left: 15px;
+}
+
+.four .detail {
+    background: url(../images/result.png) no-repeat;
+    height: 372px;
+}
+
+.four .info {
+    background: url(../images/info_4.png) no-repeat;
+    width: 612px;
+    height: 299px;
+}
+
+.five {
+    background-color: hotpink;
+}
+
+.five > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.five .info {
+    width: 1077px;
+    height: 134px;
+    background: url(../images/info_5.png) no-repeat;
+}
+
+.five .bottomBox {
+    width: 1004px;
+    position: relative;
+    flex: 1;
+    background: url(../images/toolbar.png) no-repeat top,
+    url(../images/extra.png) no-repeat bottom right;
+}
+
+.five .bottomBox div {
+    position: absolute;
+    background-color: #fff;
+}
+
+.five .top {
+    width: 100%;
+    height: 2px;
+    top: 0;
+}
+
+.five .bottom {
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+}
+
+.five .right {
+    width: 2px;
+    height: 100%;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.five .left {
+    width: 2px;
+    height: 100%;
+    transform: rotate(180deg);
+}
+
+/*动画*/
+
+.one .text img {
+    margin: 0 20px;
+    opacity: 0;
+}
+
+.one.animation .text img {
+    margin: 0;
+    opacity: 1;
+    transition: all 1s;
+}
+
+.two {
+    overflow: hidden;
+}
+
+.two .shield img:nth-child(5) {
+    transform: rotate(45deg) translate(200px, 200px);
+}
+
+.two.animation .shield img:nth-child(5) {
+    transform: rotate(0) translate(0, 0);
+    transition: all 1s;
+}
+
+.three.animation .rocket {
+    transform: translate(970px, -420px);
+    transition: all 1s;
+}
+
+.four .search {
+    transform: translateX(-150%);
+}
+
+.four.animation .search {
+    transform: translateX(0);
+    transition: all 1s;
+}
+
+.four .key {
+    width: 0;
+}
+
+.four.animation .key {
+    width: 99px;
+    transition: all 1s 1.5s steps(5);
+}
+
+.four .detail {
+    height: 0;
+}
+
+.four.animation .detail {
+    height: 372px;
+    transition: all 1s 3s;
+}
+
+.five {
+    overflow: hidden;
+}
+
+.five .left {
+    transform: translateY(-200%);
+}
+
+.five .right {
+    transform: translateY(200%);
+}
+
+.five .top {
+    transform: translateX(200%);
+}
+
+.five .bottom {
+    transform: translateX(-200%);
+}
+
+.five.animation .bottomBox div {
+    transform: translate(0, 0);
+    transition: all 1s;
+}
+
