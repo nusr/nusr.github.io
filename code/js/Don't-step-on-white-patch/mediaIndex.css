@@ -1,0 +1,110 @@
+   @media only screen and (max-width: 414px), only screen and (max-device-width:414px) {
+     html,body {
+         font-size:13.8px;
+     }
+   }
+     @media only screen and (max-width: 400px), only screen and (max-device-width:400px) {
+     html,body {
+         font-size:13.333333333333332px;
+     }
+   }
+     @media only screen and (max-width: 375px), only screen and (max-device-width:375px) {
+     html,body {
+         font-size:12.5px;
+     }
+   }
+     @media only screen and (max-width: 360px), only screen and (max-device-width:360px) {
+     html,body {
+         font-size:12px;
+     }
+   }
+     @media only screen and (max-width: 320px), only screen and (max-device-width:320px) {
+     html,body {
+         font-size:10.666666666666668px;
+     }
+   }
+     @media only screen and (max-width: 240px), only screen and (max-device-width:240px) {
+     html,body {
+         font-size:8px;
+     }
+   }
+  div{
+    box-sizing: content-box;
+}
+body {
+    background-color: #fff;
+    font: 1rem/1.333rem 'Microsoft Yahei';
+}
+
+header {
+    text-align: center;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.666rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+header div {
+    color: #fa3c3c;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+    margin-top:3rem;
+}
+
+#block-container {
+    /* width: 26.666666666666668rem;
+    height: 26.666666666666668rem; */
+    margin: 3.3333333333333335rem auto;
+    background-color: #55d769;
+    border: 2px solid #000;
+    position: relative;
+}
+
+#block-container .whiteBlock {
+    /* width: 6.666666666666667rem;
+    height: 6.666666666666667rem; */
+    background-color: #fff;
+    position: absolute;
+    border: 1px solid #000;
+}
+
+#block-container .blackBlock {
+    /* width: 6.666666666666667rem;
+    height: 6.666666666666667rem; */
+    position: absolute;
+    border: 1px solid #000;
+    font: 400 1.3333333333333333rem Arial;
+    text-align: center;
+    color: #fff;
+}
+
+#block-container #info {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #55d769;
+    text-align: center;
+    /*width: 6.666666666666667rem;*/
+    margin: 0 auto;
+}
+
+#block-container #info p {
+    font-size: 1.6rem;
+}
+
+#block-container #info a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding: 0.6666666666666666rem;
+    background-color: #55d769;
+    border-radius: 10px;
+}
+
+#block-container #info #getTime {
+    margin-top: 9rem;
+}

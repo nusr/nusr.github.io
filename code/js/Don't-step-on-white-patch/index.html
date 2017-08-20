@@ -5,84 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>别踩白块儿</title>
-    <style>
-    body {
-        background-color: #008694;
-        font: 12px/20px 'Microsoft Yahei';
-    }
-
-    header {
-        text-align: center;
-        width: 500px;
-        margin: 0 auto;
-    }
-
-    header h1 {
-        font-size: 40px;
-    }
-
-    header div {
-        color: #fa3c3c;
-        font-weight: 700;
-        font-size: 24px;
-        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-    }
-
-    #block-container {
-        width: 402px;
-        height: 402px;
-        margin: 50px auto;
-        background-color: #55d769;
-        border: 5px solid #000;
-        position: relative;
-    }
-
-    #block-container .whiteBlock {
-        width: 100px;
-        height: 100px;
-        background-color: #fff;
-        position: absolute;
-        border: 1px solid #000;
-    }
-
-    #block-container .blackBlock {
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        border: 1px solid #000;
-        font: 400 20px Arial;
-        text-align: center;
-        color: #fff;
-    }
-
-    #block-container #info {
-        z-index: 9999;
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: #55d769;
-        text-align: center;
-        width: 100px;
-        margin: 0 auto;
-    }
-
-    #block-container #info p {
-        font-size: 24px;
-    }
-
-    #block-container #info a {
-        text-decoration: none;
-        color: #fff;
-        display: inline-block;
-        padding: 10px;
-        background-color: #55d769;
-        border-radius: 10px;
-    }
-
-    #block-container #info #getTime {
-        margin-top: 135px;
-    }
-    </style>
+    <link rel="stylesheet" href="./mediaIndex.css">
     <script src="main.js"></script>
 </head>
 
@@ -90,7 +13,9 @@
     <header>
         <h1>别踩白块儿</h1>
         <div>
-            <span id="timeCount">0.000</span>秒
+            TIME: <span id="timeCount">0.000</span>&nbsp;&nbsp;
+            SCORE: <span id="scoreCount">0</span>&nbsp;&nbsp;
+            BEST: <span id="bestScoreId">0</span>
         </div>
     </header>
     <div id="block-container">

@@ -8,82 +8,112 @@ var timeCount = 0.000;
 var clickBlocks = 0;
 //计时器
 var timeId = null;
-function $(name){
+//整个盒子大小
+var containerWidth;
+var blockWidth;
+var documentWidth;
+// 最好成绩
+var bestScore = 0;
+
+function $(name) {
     return document.querySelector(name);
 }
-function $all(name){
+
+function $all(name) {
     return document.querySelectorAll(name);
 }
-window.onload = function(){
+window.onload = function() {
+    // 先设置宽高，然后初始化
+    prepareMobile();
     //游戏初始化
     init();
-};
-document.onkeydown = function(event) {
+}
+
+function prepareMobile() {
+    documentWidth = window.screen.availWidth;
+    if (documentWidth > 450) {
+        containerWidth = 400;
+        blockWidth = 100;
+    } else {
+        containerWidth = parseInt(documentWidth * 0.95);
+        blockWidth = containerWidth / 4;
+    }
+    // console.log(documentWidth, containerWidth, blockWidth)
+    $('#block-container').style.width = containerWidth + 'px';
+    $('#block-container').style.height = containerWidth + 'px';
+
+}
+
+function whichBlock(i) {
+    //是否为第一次敲击
+    if (!blocks[rows - 1][i]) {
+        isGameOver();
+        return;
+    }
+    if (clickBlocks === 0) {
+        //敲击正确，向下移动
+        runTime();
+        clearText();
+    }
+    moveDown();
+}
+document.addEventListener('keydown', function(event) {
     // console.log(event.keyCode);
     switch (event.keyCode) {
         //H
         case 72:
-         if (blocks[rows - 1][0] && clickBlocks == 0) {
-                //敲击正确，向下移动
-                runTime();
-                moveDown();
-                clearText();
-            } else if (blocks[rows - 1][0] && clickBlocks >= 0) {
-                moveDown();
-            } else {
-                //否则游戏结束
-                isGameOver();
-            }
+            whichBlock(0);
             break;
-        //J
+            //J
         case 74:
-            //判断是否敲击正确
-            if (blocks[rows - 1][1] && clickBlocks == 0) {
-                //敲击正确，向下移动
-                runTime();
-                moveDown();
-                clearText();
-            } else if (blocks[rows - 1][1] && clickBlocks >= 0) {
-                moveDown();
-            } else {
-                //否则游戏结束
-                isGameOver();
-            }
+            whichBlock(1);
             break;
             //K
         case 75:
-            //判断是否敲击正确
-            if (blocks[rows - 1][2] && clickBlocks == 0) {
-                //敲击正确，向下移动
-                runTime();
-                moveDown();
-                clearText();
-            } else if (blocks[rows - 1][2] && clickBlocks >= 0) {
-                moveDown();
-            } else {
-                //否则游戏结束
-                isGameOver();
-            }
+            whichBlock(2);
             break;
             //L
         case 76:
-            //判断是否敲击正确
-            if (blocks[rows - 1][3] && clickBlocks == 0) {
-                //敲击正确，向下移动
-                runTime();
-                moveDown();
-                clearText();
-            } else if (blocks[rows - 1][3] && clickBlocks >= 0) {
-                moveDown();
-            } else {
-                //否则游戏结束
-                isGameOver();
-            }
+            whichBlock(3);
+            break;
+        default:
+            isGameOver();
             break;
     }
-};
+});
+
+function handleClickTouch(event) {
+    var str = event.target.id;
+    // console.log(str)
+    switch (str) {
+        //H
+        case 'blackBlock-3-0':
+            whichBlock(0);
+            break;
+            //J
+        case 'blackBlock-3-1':
+            whichBlock(1);
+            break;
+            //K
+        case 'blackBlock-3-2':
+            whichBlock(2);
+            break;
+            //L
+        case 'blackBlock-3-3':
+            whichBlock(3);
+            break;
+        default:
+            isGameOver();
+            break;
+    }
+}
+document.addEventListener('click', handleClickTouch);
+document.addEventListener('touchstart', handleClickTouch);
 
 function init() {
+    // 获取最好成绩
+    bestScore = parseInt(localStorage.getItem('bestScores') || 0);
+    $('#bestScoreId').innerText = bestScore;
     for (var i = 0; i < rows; i++) {
         blocks[i] = [];
         for (var j = 0; j < cols; j++) {
@@ -92,11 +122,17 @@ function init() {
             var whiteBlock = $('#whiteBlock-' + i + '-' + j);
             whiteBlock.style.top = getPosTop(i, j) + 'px';
             whiteBlock.style.left = getPosLeft(i, j) + 'px';
+            // console.log(blockWidth)
+            whiteBlock.style.width = blockWidth + 'px';
+            whiteBlock.style.height = blockWidth + 'px';
             //黑块布局
             $('#block-container').innerHTML += '<div class="blackBlock" id="blackBlock-' + i + '-' + j + '"></div>';
             var blackBlock = $('#blackBlock-' + i + '-' + j);
             blackBlock.style.top = getPosTop(i, j) + 'px';
             blackBlock.style.left = getPosLeft(i, j) + 'px';
+            blackBlock.style.width = blockWidth + 'px';
+            blackBlock.style.height = blockWidth + 'px';
+            blackBlock.style.lineHeight = blockWidth + 'px';
         }
     }
     //每一行随机生成一个黑块，且所有黑块不能再同一列
@@ -107,27 +143,34 @@ function init() {
             //当上一行的同一列是黑块，重新生成位置
             randY = Math.floor(Math.random() * cols);
             count++;
-            if (count > 100) {
+            if (count > 50) {
                 break;
             }
         }
         blocks[i][randY] = 1;
         $('#blackBlock-' + i + '-' + randY).style.backgroundColor = '#000';
     }
-    $('#blackBlock-3-0').innerText = '按H移动';
-    $('#blackBlock-3-1').innerText = '按J移动';
-    $('#blackBlock-3-2').innerText = '按K移动';
-    $('#blackBlock-3-3').innerText = '按L移动';
     timeCount = 0;
     clickBlocks = 0;
+    if (containerWidth < 400) {
+        $('#blackBlock-3-0').innerText = '点击开始';
+        $('#blackBlock-3-1').innerText = '点击开始';
+        $('#blackBlock-3-2').innerText = '点击开始';
+        $('#blackBlock-3-3').innerText = '点击开始';
+        return;
+    }
+    $('#blackBlock-3-0').innerText = '按H开始';
+    $('#blackBlock-3-1').innerText = '按J开始';
+    $('#blackBlock-3-2').innerText = '按K开始';
+    $('#blackBlock-3-3').innerText = '按L开始';
 }
 
 function getPosTop(i, j) {
-    return i * 100;
+    return i * blockWidth;
 }
 
 function getPosLeft(i, j) {
-    return j * 100;
+    return j * blockWidth;
 }
 
 function moveDown() {
@@ -136,11 +179,11 @@ function moveDown() {
             if (blocks[i][j]) {
                 //是黑色块就执行
                 blocks[i][j] = 0;
-                $('#blackBlock-' + i + '-' + j).style.backgroundColor='#fff';
-                if(i !== (rows - 1)) {
+                $('#blackBlock-' + i + '-' + j).style.backgroundColor = '#fff';
+                if (i !== (rows - 1)) {
                     //上一列设置为白色，下一列设置为黑色
                     blocks[i + 1][j] = 1;
-                    $('#blackBlock-' + (i + 1) + '-' + j).style.backgroundColor= '#000';
+                    $('#blackBlock-' + (i + 1) + '-' + j).style.backgroundColor = '#000';
                 }
 
             }
@@ -149,8 +192,18 @@ function moveDown() {
     }
     var randY = Math.floor(Math.random() * cols);
     blocks[0][randY] = 1;
-    $('#blackBlock-0-' + randY).style.backgroundColor= '#000';
+    setTimeout(function() {
+        $('#blackBlock-0-' + randY).style.backgroundColor = '#000';
+    }, 25)
     clickBlocks++;
+    updateScore()
+}
+
+function updateScore() {
+    $('#scoreCount').innerText = clickBlocks;
+    if (clickBlocks > bestScore) {
+        $('#bestScoreId').innerText = clickBlocks;
+    }
 }
 
 function isGameOver() {
@@ -161,11 +214,13 @@ function isGameOver() {
     //游戏结束提示
     if (!document.getElementById("info")) {
         $("#block-container").innerHTML += '<div id="info"><p id="getTime">用时：<span>' + str + '</span></p><p>得分：<span>' + clickBlocks + '</span></p><a href="javascript:restartGame();" id="restartGame">Try Again</a></div>';
-        $("#info").style.width = "412px";
-        $("#info").style.height = "412px";
+        $("#info").style.width = containerWidth + "px";
+        $("#info").style.height = containerWidth + "px";
         $("#info").style.backgroundColor = "rgba(0,0,0,.5)";
     }
-
+    if (clickBlocks > bestScore) {
+        localStorage.setItem('bestScores', clickBlocks);
+    }
 }
 
 function runTime() {
@@ -175,7 +230,7 @@ function runTime() {
     // console.log(str);
     $("#timeCount").innerText = str;
     timeId = setTimeout(runTime, 1);
-    if(timeCount >= 10.00){
+    if (timeCount >= 10.00) {
         isGameOver();
     }
 }
@@ -189,7 +244,7 @@ function clearText() {
 
 function restartGame() {
     var arr = $all(".blackBlock");
-    for(var i = arr.length -1;i >= 0;i-- ){
+    for (var i = arr.length - 1; i >= 0; i--) {
         arr[i].parentNode.removeChild(arr[i]);
     }
     $("#info").parentNode.removeChild($("#info"))
