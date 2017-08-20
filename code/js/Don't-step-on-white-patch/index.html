@@ -5,17 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>别踩白块儿</title>
-    <link rel="stylesheet" href="./mediaIndex.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="./src/index.css">
 </head>
 
 <body>
     <header>
         <h1>别踩白块儿</h1>
         <div>
-            TIME: <span id="timeCount">0.000</span>&nbsp;&nbsp;
-            SCORE: <span id="scoreCount">0</span>&nbsp;&nbsp;
-            BEST: <span id="bestScoreId">0</span>
+            TIME: <span id="timeCount">0.000</span>&nbsp;&nbsp; SCORE: <span id="scoreCount">0</span>&nbsp;&nbsp; BEST: <span id="bestScoreId">0</span>
         </div>
     </header>
     <div id="block-container">
@@ -36,6 +33,48 @@
         <div class="whiteBlock" id="whiteBlock-3-2"></div>
         <div class="whiteBlock" id="whiteBlock-3-3"></div>
     </div>
+    <div id="tips">
+        <div class="tips-pc">
+            <div class="tips-header">pc端使用手册</div>
+            <ul>
+                <li>上移：<strong>W</strong> 或 <strong>↑</strong> 或 <strong>8</strong></li>
+                <li>下移：<strong>S</strong> 或 <strong>↓</strong> 或 <strong>5</strong></li>
+                <li>左移：<strong>A</strong> 或 <strong>←</strong> 或 <strong>4</strong></li>
+                <li>右移：<strong>D</strong> 或 <strong>→</strong> 或 <strong>6</strong></li>
+            </ul>
+        </div>
+        <div class="tips-mobile">
+            <div class="tips-header">移动端使用手册</div>
+            <ul>
+                <li>上移：手指上滑</li>
+                <li>下移：手指下滑</li>
+                <li>左移：手指左滑</li>
+                <li>右移：手指右滑</li>
+            </ul>
+            <div class="tips-header">手机扫码畅玩</div>
+            <div>
+                <img src="" alt="扫码畅玩">
+            </div>
+        </div>
+        <div class="tips-github">
+            <div class="tips-header">
+                <a href="" target="_blank">github 地址</a>
+            </div>
+        </div>
+        <div class="tips-apk">
+            <div class="tips-header">
+                <a href="" target="_blank">Android Apk 下载地址</a>
+            </div>
+        </div>
+        <div class="tips-apk tips-header">
+            <a href="https://github.com/nusr">By 徐琦</a>
+        </div>
+    </div>
+    <div id="tips-image">
+        <img src="src/tips.png" alt="提示">
+    </div>
+    <div id="close-tips">X</div>
+    <script src="./src/main.js"></script>
 </body>
 
 </html>
