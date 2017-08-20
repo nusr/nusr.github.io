@@ -1,0 +1,390 @@
+//公共颜色
+@baseColor: #e92322;
+@fontColor: #333;
+@backgroundColor: #f8f8f8;
+/* 头部样式*/
+.wjs_header {
+  color: @fontColor;
+  height: 50px;
+  line-height: 50px;
+
+  border-bottom: 1px solid #ccc;
+  .row {
+    height: 100%;
+    text-align: center;
+    > div:nth-of-type(-n+3) {
+      border-right: 1px solid #ccc;
+      > .wjs_code {
+        display: block;
+        position: relative;
+        > img {
+          display: none;
+          position: absolute;
+          top: 49px;
+          left: 50%;
+          margin-left: -60px;
+        }
+        &:hover {
+          > img {
+            display: block;
+            z-index: 999;
+
+          }
+        }
+      }
+    }
+    > div:nth-last-of-type(1) {
+      > .btn-danger {
+        background-color: @baseColor;
+        border-color: @baseColor;
+      }
+      > .btn {
+        padding: 3px 15px;
+      }
+      > .btn-link {
+        color: #333;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+//导航
+.wjs_nav {
+  color: @fontColor;
+  margin-bottom: 0;
+  background-color: @backgroundColor;
+  .container {
+    .navbar-brand {
+      height: 80px;
+      line-height: 50px;
+      display: block;
+      font-size: 40px;
+      .wjs_icon_logo {
+        color: @baseColor;
+      }
+      .wjs_icon_text {
+        color: #333;
+        margin-left: 5px;
+      }
+    }
+  }
+  .collapse {
+    .navbar-nav {
+      > li {
+        > a {
+          line-height: 50px;
+          height: 80px;
+          display: block;
+          font-size: 16px;
+        }
+        > a:hover, a:focus {
+          color: #777;
+          border-bottom: 3px solid @baseColor;
+        }
+      }
+      .active {
+        > a, a:hover, a:focus {
+          background-color: transparent;
+          border-bottom: 3px solid @baseColor;
+        }
+      }
+    }
+  }
+  .navbar-toggle {
+    margin-top: 23px;
+  }
+}
+
+.wjs_banner {
+  color: @fontColor;
+  margin-top: 3px;
+  .mobileImg {
+    display: block;
+    height: 340px;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .pcImg {
+    height: 410px;
+    display: block;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+.wjs_info {
+  color: @fontColor;
+  .container {
+    .row {
+      > a {
+        font-size: 30px;
+        display: block;
+        padding: 10px;
+        margin-top: 20px;
+        p {
+          font-size: 16px;
+        }
+        &:hover {
+          color: @baseColor
+        }
+      }
+    }
+  }
+}
+
+.wjs_order {
+  color: @fontColor;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  height: 60px;
+  line-height: 60px;
+  .row {
+    .wjs_icon {
+      font-size: 18px;
+    }
+    .rightNow {
+      border-bottom: 1px dashed @baseColor;
+      color: @baseColor;
+    }
+    a:hover {
+      color: @baseColor;
+    }
+  }
+}
+
+.wjs_product {
+  background-color: #eee;
+  color: @fontColor;
+  .nav {
+    margin-top: 30px;
+    li {
+      a, a:hover, a:focus {
+        background-color: #eee;
+        border: 0;
+        padding: 20px;
+      }
+    }
+    li.active {
+      a, a:hover, a:focus {
+        background-color: #eee;
+        border: 0;
+        border-bottom: 3px solid @baseColor;
+      }
+    }
+  }
+  .tab-content {
+    margin-bottom: 20px;
+    > .tab-pane {
+      > .row {
+        > .col-xs-12 {
+          padding-right: 0;
+          margin-top: 20px;
+          position: relative;
+          > .tabLeft {
+            background-color: #fff;
+            padding: 0 5px;
+            height: 100%;
+            margin-right: 100px;
+            border-right: 1px dashed #eee;
+            position: relative;
+            > .row {
+              h4 {
+                text-align: center;
+              }
+              > div:nth-child(2n+1) {
+                text-align: right;
+
+              }
+            }
+          }
+          > .tabRight {
+            background-color: #fff;
+            height: 100%;
+            position: absolute;
+            width: 100px;
+            right: 0;
+            top: 0;
+            text-align: center;
+            padding-top: 40px;
+            box-sizing: border-box;
+            > strong {
+              font-size: 40px;
+            }
+            > strong, > span {
+              color: @baseColor;
+            }
+            &::before, &::after {
+              position: absolute;
+              content: '';
+              height: 10px;
+              width: 10px;
+              border-radius: 50%;
+              border: 1px solid #eee;
+              left: -5px;
+              background-color: #eee;
+            }
+            &::before {
+              top: -5px;
+            }
+            &::after {
+              bottom: -5px;
+            }
+            > .wjs_tips {
+              width: 100%;
+              position: absolute;
+              top: 28px;
+              left: 50%;
+              transform: translateX(-50%);
+              span:first-of-type {
+                color: @baseColor;
+                border: 1px solid @baseColor;
+              }
+              span:last-of-type {
+                color: #00f;
+                border: 1px solid #00f;
+              }
+              > span {
+                padding: 0;
+                border-radius: 0;
+              }
+            }
+          }
+        }
+        > .col-xs-12:first-of-type {
+          > .tabLeft {
+            background-color: @baseColor;
+            color: #fff !important;
+            &::before {
+              content: '\e915';
+              font: 30px "wjs";
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+          > .tabRight {
+            background-color: @baseColor;
+            > strong, > span, > p {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.wjs_news {
+  color: @fontColor;
+  padding: 20px 0;
+  > .container {
+    > .row {
+      h3 {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        margin-right: 20px;
+        &::before {
+          content: "";
+          bottom: -5px;
+          right: -10px;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          border: 1px solid #ccc;
+          position: absolute;
+        }
+      }
+      > div:nth-of-type(2) {
+        overflow: hidden;
+      }
+      .nav {
+        text-align: center;
+        border: 0;
+        > li {
+          margin-bottom:60px;
+
+          > a {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            line-height: 60px;
+            color: #fff;
+            background-color: #ccc;
+            padding: 0;
+            span {
+              font-size: 30px;
+            }
+            &:hover {
+              background-color: @baseColor;
+            }
+          }
+
+        }
+        >li.active{
+          a{
+            background-color: @baseColor;
+          }
+        }
+        > li:last-of-type {
+          margin-bottom: 0;
+        }
+        @media screen and (min-width: 768px) and(max-width: 992px){
+          >li{
+            margin:30px 20px;
+          }
+        }
+        @media screen and(max-width: 768px){
+          >li{
+            width: 25%;
+            margin:30px 0;
+          }
+        }
+      }
+      .wjs_line {
+        width: 2px;
+        position: absolute;
+        top: 20px;
+        height: 100%;
+        left: 45px;
+        border-left: 1px dashed @baseColor;
+      }
+      .tab-content {
+        .tab-pane {
+          > ul {
+            margin-top: 45px;
+            > li {
+              line-height: 50px;
+              list-style: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.parter {
+  background-color: #eee;
+  text-align: center;
+  .parterTitle {
+  }
+  .parterCon {
+    padding-left: 0;
+    display: inline-block;
+    li {
+      float: left;
+      margin:10px;
+      a {
+        font-size: 80px;
+
+      }
+    }
+  }
+}
