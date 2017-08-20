@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>别踩白块儿</title>
-    <link rel="stylesheet" href="./src/index.css">
+    <link rel="stylesheet" href="./src/mediaIndex.css">
 </head>
 
 <body>
     <header>
         <h1>别踩白块儿</h1>
-        <div>
+        <div class="scoreTime">
             TIME: <span id="timeCount">0.000</span>&nbsp;&nbsp; SCORE: <span id="scoreCount">0</span>&nbsp;&nbsp; BEST: <span id="bestScoreId">0</span>
         </div>
     </header>
@@ -37,37 +37,31 @@
         <div class="tips-pc">
             <div class="tips-header">pc端使用手册</div>
             <ul>
-                <li>上移：<strong>W</strong> 或 <strong>↑</strong> 或 <strong>8</strong></li>
-                <li>下移：<strong>S</strong> 或 <strong>↓</strong> 或 <strong>5</strong></li>
-                <li>左移：<strong>A</strong> 或 <strong>←</strong> 或 <strong>4</strong></li>
-                <li>右移：<strong>D</strong> 或 <strong>→</strong> 或 <strong>6</strong></li>
+                <li>使用鼠标点击最下面的黑块</li>
+                <li>或者从左到右，分别按键<strong>H</strong> <strong>J</strong> <strong>K</strong> <strong>L</strong></li>
+                <li>点击最下面黑块以外的任何位置，游戏结束</li>
             </ul>
         </div>
         <div class="tips-mobile">
             <div class="tips-header">移动端使用手册</div>
-            <ul>
-                <li>上移：手指上滑</li>
-                <li>下移：手指下滑</li>
-                <li>左移：手指左滑</li>
-                <li>右移：手指右滑</li>
-            </ul>
+            <div>手指直接点击最下面的黑块，点到其他位置，游戏结束</div>
             <div class="tips-header">手机扫码畅玩</div>
             <div>
-                <img src="" alt="扫码畅玩">
+                <img src="./src/qrcode.png" alt="扫码畅玩">
             </div>
         </div>
-        <div class="tips-github">
+        <div>
             <div class="tips-header">
-                <a href="" target="_blank">github 地址</a>
+                <a href="https://github.com/nusr/nusr.github.io/tree/master/code/js/Don't-step-on-white-patch" target="_blank">github 地址</a>
             </div>
         </div>
-        <div class="tips-apk">
+        <div>
             <div class="tips-header">
                 <a href="" target="_blank">Android Apk 下载地址</a>
             </div>
         </div>
-        <div class="tips-apk tips-header">
-            <a href="https://github.com/nusr">By 徐琦</a>
+        <div class="tips-header">
+            <a href="https://github.com/nusr" target="_blank">By 徐琦</a>
         </div>
     </div>
     <div id="tips-image">
