@@ -1,0 +1,12 @@
+body{
+    background-color: #fff !important;
+    height: 100%;
+}
+.mint-header.seconde-title{
+    background-color: #eee;
+    color: #26a2ff;
+    top: 40px;
+}
+.return-nav-bar{
+    margin-top:80px;
+}
