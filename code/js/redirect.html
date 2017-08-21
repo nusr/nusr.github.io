@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<a href="https://github.com/nusr" id="skip">注册成功，5秒后跳转</a>
+<script>
+    var skip = document.getElementById("skip");
+    var num = 5;
+    var id = setInterval(function () {
+        skip.innerHTML = "注册成功，"+num+"秒后跳转";
+        num--;
+        if(num === 0){
+            clearInterval(id);
+            location.href = skip.href;
+        }
+    },1000);
+</script>
+</body>
+</html>
