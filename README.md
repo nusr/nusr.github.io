@@ -31,7 +31,7 @@
     width="100%"
     height="400"
     style="border:none;outline:none;"
-    src="https://github.com/nusr/2048">
+    src="https://nusr.github.io/2048/">
 </iframe>
 
 ## [Resume](https://github.com/nusr/resume-vue)
