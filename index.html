@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nusr.github.io</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 20px 40px;
+      }
+      .repo-title {
+        display: flex;
+        align-items: center;
+      }
+      .repo-name {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .repo-star {
+        padding-left: 8px;
+        display: flex;
+        align-items: center;
+      }
+      iframe {
+        border: none;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      var count = 0;
+      function noop() {}
+      function jsonp(url, opts, fn) {
+        if ('function' == typeof opts) {
+          fn = opts;
+          opts = {};
+        }
+        if (!opts) opts = {};
+        var prefix = opts.prefix || '__jp';
+        // use the callback name that was passed if one was provided.
+        // otherwise generate a unique name by incrementing our counter.
+        var id = opts.name || prefix + count++;
+        var param = opts.param || 'callback';
+        var timeout = null != opts.timeout ? opts.timeout : 60000;
+        var enc = encodeURIComponent;
+        var target =
+          document.getElementsByTagName('script')[0] || document.head;
+        var script;
+        var timer;
+        if (timeout) {
+          timer = setTimeout(function () {
+            cleanup();
+            if (fn) fn(new Error('Timeout'));
+          }, timeout);
+        }
+        function cleanup() {
+          if (script.parentNode) script.parentNode.removeChild(script);
+          window[id] = noop;
+          if (timer) clearTimeout(timer);
+        }
+        function cancel() {
+          if (window[id]) {
+            cleanup();
+          }
+        }
+
+        window[id] = function (data) {
+          cleanup();
+          if (fn) fn(null, data);
+        };
+        // add qs component
+        url += (~url.indexOf('?') ? '&' : '?') + param + '=' + enc(id);
+        url = url.replace('?&', '?');
+        // create script
+        script = document.createElement('script');
+        script.src = url;
+        target.parentNode.insertBefore(script, target);
+
+        return cancel;
+      }
+    </script>
+    <script>
+      const USER_NAME = 'nusr';
+      const SPECIAL_REPO = 'excel';
+      window.onload = function () {
+        const requestUrl = `https://api.github.com/users/${USER_NAME}/repos?per_page=100`;
+        jsonp(requestUrl, null, (error, data) => {
+          if (error) {
+            console.error(error);
+          } else {
+            console.log(data);
+            handleHtml(data.data);
+          }
+        });
+      };
+      function handleData(list = []) {
+        const sourceRepoList = list.filter(
+          (item) => item.owner.login === USER_NAME,
+        );
+        /**
+         * repoName
+         * starts
+         * desc
+         * github url
+         * demo url
+         **/
+        const result = [];
+        for (const item of list) {
+          if (
+            item &&
+            item.owner &&
+            item.owner.login === USER_NAME &&
+            !item.private &&
+            !item.fork &&
+            !item.archived &&
+            (item.stargazers_count > 0 || [SPECIAL_REPO].includes(item.name))
+          ) {
+            result.push({
+              repoName: item.name,
+              githubUrl: item.html_url,
+              description: item.description,
+              demoUrl: item.homepage,
+              stars: item.stargazers_count,
+            });
+          }
+        }
+        result.sort((a, b) => b.stars - a.stars);
+        const index = result.findIndex(
+          (item) => item.repoName === SPECIAL_REPO,
+        );
+        if (index >= 0) {
+          const temp = {
+            ...result[index],
+          };
+          result.splice(index, 1);
+          result.unshift(temp);
+        }
+        return result;
+      }
+
+      function handleHtml(data) {
+        const list = handleData(data);
+        console.log(list);
+        const html = [];
+        for (const item of list) {
+          const demo = item.demoUrl
+            ? `<div class="repo-demo-url"><a href="${item.demoUrl}">demo url: ${item.demoUrl}</a></div>`
+            : '';
+          const svgIcon = `<svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="octicon octicon-star mr-1">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg>`;
+          html.push(`  
+          <div class="repo">
+      <div class="repo-title">
+      <span class="repo-name">${item.repoName}</span>
+      <span class="repo-star">
+        ${svgIcon} 
+        <span> ${item.stars}</span>
+      </span>
+    </div>
+    <div class="repo-desc">${item.description}</div>
+    <div class="repo-github-url"><a href="${item.githubUrl}">github url:${item.githubUrl}</a></div>
+    ${demo}
+    <iframe
+      title="${item.repoName}"
+      width="100%"
+      height="400"
+      src="${item.demoUrl}"
+    >
+    </iframe>
+</div>`);
+        }
+        document.querySelector('#container').innerHTML = html.join('\n');
+      }
+    </script>
+  </body>
+</html>
