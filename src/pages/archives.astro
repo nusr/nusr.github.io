@@ -1,0 +1,113 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
+
+const postData = {};
+for (const item of posts) {
+  const year = item.data.pubDate.getFullYear();
+  if (postData[year]) {
+    postData[year].push(item);
+  } else {
+    postData[year] = [item];
+  }
+}
+
+const yearList = Object.keys(postData);
+yearList.sort((a, b) => b - a);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .archives {
+        position: relative;
+      }
+      .archives::before {
+        position: absolute;
+        top: 2em;
+        bottom: 1em;
+        left: 0;
+        height: auto;
+        content: "";
+        background-color: var(--accent);
+        width: 3px;
+      }
+      .archives-container {
+        padding-left: 10px;
+      }
+      .section-year {
+        font-size: 1.8em;
+        position: relative;
+      }
+      .section-year::before {
+        position: absolute;
+        left: -25px;
+        top: 12px;
+        content: "";
+        background-color: var(--white);
+        width: 12px;
+        height: 12px;
+        border: 2px solid var(--accent);
+        border-radius: 50%;
+        box-sizing: border-box;
+      }
+      .section-list-item {
+        position: relative;
+      }
+      .section-list-item::before {
+        position: absolute;
+        left: -25px;
+        top: 15px;
+        content: "";
+        background-color: var(--accent);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        box-sizing: border-box;
+      }
+      .title {
+        font-size: 1.2em;
+      }
+      .date > time {
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="archives">
+      <div class="archives-container">
+        {
+          yearList.map((year) => (
+            <section class="section-container">
+              <h2 class="section-year">{year}</h2>
+              <div class="section-list">
+                {postData[year].map((post) => (
+                  <div class="section-list-item">
+                    <a href={`/blog/${post.slug}/`} class="title">
+                      {post.data.title}
+                    </a>
+                    <div class="date">
+                      <FormattedDate date={post.data.pubDate} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))
+        }
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
