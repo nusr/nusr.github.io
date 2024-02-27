@@ -5,6 +5,7 @@ interface GetPaginationProps<T> {
   blog: T;
   page: string | number;
   isIndex?: boolean;
+  total: number;
 }
 
 const getPagination = <T>({
@@ -29,6 +30,7 @@ const getPagination = <T>({
     totalPages,
     currentPage,
     paginatedPosts,
+    total: blog.length,
   };
 };
 

@@ -1,5 +1,5 @@
 ---
-import { SITE } from "@config";
+import { SITE, COMMENT_CONFIG } from "@config";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Layout from "./Layout.astro";
@@ -23,6 +23,14 @@ const { frontmatter } = Astro.props;
       </h1>
       <p class="mt-4"><slot /></p>
     </section>
+    <script
+      src={COMMENT_CONFIG.src}
+      repo={COMMENT_CONFIG.repo}
+      issue-term={COMMENT_CONFIG.issueTerm}
+      theme={COMMENT_CONFIG.theme}
+      crossorigin={COMMENT_CONFIG.crossOrigin}
+      label={COMMENT_CONFIG.label}
+      async></script>
   </main>
   <Footer />
 </Layout>

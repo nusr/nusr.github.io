@@ -7,7 +7,8 @@ import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
-import { SITE } from "@config";
+import { SITE, COMMENT_CONFIG } from "@config";
+import countReadTime from "@utils/countReadTime";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -44,13 +45,18 @@ const layoutProps = {
   ogImage: ogUrl,
   scrollSmooth: true,
 };
+
+const readTime = countReadTime(post.body);
 ---
 
 <Layout {...layoutProps}>
   <Header />
   <main id="main-content">
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
-    <Datetime pubDate={pubDate} modDate={modDate} size="lg" className="my-2" />
+    <div class="my-2 flex">
+      <Datetime pubDate={pubDate} modDate={modDate} size="lg" />
+      <div class="pl-4 text-base opacity-80">{readTime} min read</div>
+    </div>
     <ul class="my-4">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
     </ul>
@@ -76,13 +82,13 @@ const layoutProps = {
       <ShareLinks />
     </div>
     <script
-      src="https://utteranc.es/client.js"
-      repo="nusr/nusr.github.io"
-      issue-term="pathname"
-      theme="preferred-color-scheme"
-      crossorigin="anonymous"
-      async
-    ></script>
+      src={COMMENT_CONFIG.src}
+      repo={COMMENT_CONFIG.repo}
+      issue-term={COMMENT_CONFIG.issueTerm}
+      theme={COMMENT_CONFIG.theme}
+      crossorigin={COMMENT_CONFIG.crossOrigin}
+      label={COMMENT_CONFIG.label}
+      async></script>
   </main>
   <Footer />
 </Layout>

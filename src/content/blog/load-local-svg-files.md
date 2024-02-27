@@ -2,7 +2,7 @@
 title: Vue/cli 3.0 使用 svg-sprite-loader 加载本地 SVG 文件
 description: Vue/cli 3.0 uses svg-sprite-loader to load local SVG files
 pubDate: 2019/04/03
-slug: vue-cli-3-0-uses-svg-sprite-loader-to-load-local-svg-files
+slug: load-local-svg-files
 draft: false
 tags:
   - Vue

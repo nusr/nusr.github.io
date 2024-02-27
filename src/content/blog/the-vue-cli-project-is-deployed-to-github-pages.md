@@ -2,7 +2,7 @@
 title: vue cli 3.x 项目部署到 Github Pages
 description: The Vue CLI 3.x project is deployed to GitHub Pages
 pubDate: 2019/04/16
-slug: the-vue-cli-3-x-project-is-deployed-to-git-hub-pages
+slug: the-vue-cli-project-is-deployed-to-github-pages
 draft: false
 tags:
   - Vue

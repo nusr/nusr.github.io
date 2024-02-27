@@ -2,7 +2,7 @@
 title: React 与 React-Native 使用同一个 meteor 后台
 description: React uses the same meteor backend as React-Native
 pubDate: 2019/04/21
-slug: react-uses-the-same-meteor-backend-as-react-native
+slug: meteor-as-a-backend
 draft: false
 tags:
   - React

@@ -2,7 +2,7 @@
 title: 使用 Create-React-App 开发 Chrome 扩展
 description: Use Create-React-App to develop Chrome extensions
 pubDate: 2019/07/07
-slug: use-create-react-app-to-develop-chrome-extensions
+slug: develop-a-chrome-extension
 draft: false
 tags:
   - React

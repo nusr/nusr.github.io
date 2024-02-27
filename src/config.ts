@@ -21,7 +21,17 @@ export const LOGO_IMAGE = {
   svg: false,
   width: 216,
   height: 46,
-};
+} as const;
+
+// comment config
+export const COMMENT_CONFIG = {
+  repo: "nusr/nusr.github.io",
+  src: "https://utteranc.es/client.js",
+  issueTerm: "pathname",
+  theme: "preferred-color-scheme",
+  crossOrigin: "anonymous",
+  label: "comment",
+} as const;
 
 export const SHARE_LINKS: ShareLinkItem[] = [
   {

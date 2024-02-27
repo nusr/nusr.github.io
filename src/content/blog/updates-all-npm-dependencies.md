@@ -2,7 +2,7 @@
 title: 一行命令更新所有 npm 依赖包
 description: A one-line command updates all npm dependencies
 pubDate: 2019/04/21
-slug: a-one-line-command-updates-all-npm-dependencies
+slug: updates-all-npm-dependencies
 draft: false
 tags:
   - NPM

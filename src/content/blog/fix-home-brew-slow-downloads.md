@@ -2,7 +2,7 @@
 title: 解决 macOS HomeBrew 下载缓慢的问题
 description: Resolves slow macOS HomeBrew downloads
 pubDate: 2019/04/13
-slug: resolves-slow-mac-os-home-brew-downloads
+slug: fix-home-brew-slow-downloads
 draft: false
 tags:
   - Proxy

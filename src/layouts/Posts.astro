@@ -14,16 +14,16 @@ export interface Props {
   paginatedPosts: CollectionEntry<"blog">[];
 }
 
-const { currentPage, totalPages, paginatedPosts } = Astro.props;
+const { currentPage, totalPages, paginatedPosts, total } = Astro.props;
 ---
 
 <Layout title={`Posts | ${SITE.title}`}>
   <Header activeNav="blog" />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
+  <Main pageTitle="Posts" pageDesc={`${total} articles in total`}>
     <ul>
       {
-        paginatedPosts.map(({ data, slug }) => (
-          <Card href={`/posts/${slug}/`} frontmatter={data} />
+        paginatedPosts.map(({ data, slug, body }) => (
+          <Card href={`/posts/${slug}/`} frontMatter={data} />
         ))
       }
     </ul>

@@ -4,12 +4,16 @@ import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   href?: string;
-  frontmatter: CollectionEntry<"blog">["data"];
+  frontMatter: CollectionEntry<"blog">["data"];
   secHeading?: boolean;
 }
 
-export default function Card({ href, frontmatter, secHeading = true }: Props) {
-  const { title, pubDate, modDate, description } = frontmatter;
+export default function Card({
+  href,
+  frontMatter,
+  secHeading = true,
+}: Props) {
+  const { title, pubDate, modDate, description } = frontMatter;
 
   const headerProps = {
     style: { viewTransitionName: slugifyStr(title) },

@@ -27,7 +27,10 @@ function getPostArchives(blog: CollectionEntry<"blog">[]) {
     }
   }
 
-  return postData;
+  return {
+    postData,
+    total: sortPosts.length
+  };
 }
 
 export default getPostArchives;

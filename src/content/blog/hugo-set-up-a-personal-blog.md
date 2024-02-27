@@ -2,7 +2,7 @@
 title: Hugo + Github Pages 搭建个人博客
 description: Hugo plus Github Pages set up a personal blog
 pubDate: 2019/04/27
-slug: hugo-github-pages-set-up-a-personal-blog
+slug: hugo-set-up-a-personal-blog
 draft: false
 tags:
   - Github Pages

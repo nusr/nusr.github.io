@@ -2,7 +2,7 @@
 title: 博客使用 utterances 作为评论系统
 description: Bloggers use utterances as a commenting system
 pubDate: 2019/05/04
-slug: bloggers-use-utterances-as-a-commenting-system
+slug: utterances-as-a-commenting-system
 draft: false
 tags:
   - Blog

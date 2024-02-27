@@ -11,7 +11,7 @@ import { SITE } from "@config";
 
 const blog = await getCollection("blog");
 
-const postData = getPostArchives(blog);
+const { postData, total } = getPostArchives(blog);
 
 const yearList = Array.from(postData.keys());
 yearList.sort((a, b) => b - a);
@@ -21,7 +21,7 @@ yearList.sort((a, b) => b - a);
   <Header activeNav="archives" />
   <Main
     pageTitle="Archives"
-    pageDesc="All the archives used in blog."
+    pageDesc={`${total} articles in total`}
     class="archives-main"
   >
     <div class="archives">
