@@ -1,5 +1,5 @@
 ---
-import { DATE_FORMAT } from "../consts";
+import { LOCALE } from "../config";
 interface Props {
   date: Date;
 }
@@ -7,6 +7,11 @@ interface Props {
 const { date } = Astro.props;
 ---
 
-<time datetime={date.toISOString()}>
-  {date.toLocaleDateString(DATE_FORMAT)}
+<time datetime={date.toISOString()} class="date-time">
+  {date.toLocaleDateString(LOCALE.langTag)}
 </time>
+<style>
+  .date-time {
+    @apply text-sm italic opacity-80;
+  }
+</style>
