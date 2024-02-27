@@ -53,7 +53,7 @@ const readTime = countReadTime(post.body);
   <Header />
   <main id="main-content">
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
-    <div class="my-2 flex">
+    <div class="my-2 flex items-center">
       <Datetime pubDate={pubDate} modDate={modDate} size="lg" />
       <div class="pl-4 text-base opacity-80">{readTime} min read</div>
     </div>

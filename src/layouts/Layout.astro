@@ -1,7 +1,8 @@
 ---
-import { LOCALE, SITE } from "@config";
+import { LOCALE, SITE, GA_ID } from "@config";
 import "@styles/base.css";
 import { ViewTransitions } from "astro:transitions";
+import GoogleAnalytics from "@components/GoogleAnalytics.astro";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -103,20 +104,6 @@ const socialImageURL = new URL(
   </head>
   <body>
     <slot />
-    <script async src="https://www.google-analytics.com/analytics.js"></script>
-    <script type="application/javascript">
-      var doNotTrack = false;
-      if (!doNotTrack) {
-        window.ga =
-          window.ga ||
-          function () {
-            (ga.q = ga.q || []).push(arguments);
-          };
-        ga.l = +new Date();
-        ga("create", "UA-138883536-1", "auto");
-        ga("set", "anonymizeIp", true);
-        ga("send", "pageview");
-      }
-    </script>
+    <GoogleAnalytics />
   </body>
 </html>

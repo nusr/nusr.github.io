@@ -33,6 +33,9 @@ export const COMMENT_CONFIG = {
   label: "comment",
 } as const;
 
+// google-analytics
+export const GA_ID = "UA-138883536-1";
+
 export const SHARE_LINKS: ShareLinkItem[] = [
   {
     name: "WhatsApp",
@@ -86,6 +89,18 @@ export const SOCIALS: SocialObjects = [
     active: true,
   },
   {
+    name: "Twitter",
+    href: "https://twitter.com/stevenusr",
+    linkTitle: `${SITE.title} on Twitter`,
+    active: true,
+  },
+  {
+    name: "Mail",
+    href: "mailto:stevexugc@gmail.com",
+    linkTitle: `Send an email to ${SITE.title}`,
+    active: true,
+  },
+  {
     name: "Facebook",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Facebook`,
@@ -103,18 +118,7 @@ export const SOCIALS: SocialObjects = [
     linkTitle: `${SITE.title} on LinkedIn`,
     active: false,
   },
-  {
-    name: "Mail",
-    href: "mailto:stevexugc@gmail.com",
-    linkTitle: `Send an email to ${SITE.title}`,
-    active: true,
-  },
-  {
-    name: "Twitter",
-    href: "https://twitter.com/stevenusr",
-    linkTitle: `${SITE.title} on Twitter`,
-    active: true,
-  },
+
   {
     name: "Twitch",
     href: "https://github.com/satnaing/astro-paper",
