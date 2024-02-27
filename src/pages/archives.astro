@@ -33,7 +33,7 @@ yearList.sort((a, b) => b - a);
               <div class="section-list">
                 {postData.get(year)!.map(post => (
                   <div class="section-list-item">
-                    <a href={`/blog/${post.url}/`} class="title">
+                    <a href={`/posts/${post.url}/`} class="title">
                       {post.title}
                     </a>
                     <div class="date">
