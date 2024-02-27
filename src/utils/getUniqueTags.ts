@@ -19,7 +19,7 @@ const getUniqueTags = (blog: CollectionEntry<"blog">[]) => {
       record[item.tag].count++;
     } else {
       record[item.tag] = {
-        tagName: item.tag,
+        tagName: item.tagName,
         tag: item.tag,
         count: 1,
       };
