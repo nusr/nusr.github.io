@@ -57,7 +57,7 @@ const readTime = countReadTime(post.body);
       <Datetime pubDate={pubDate} modDate={modDate} size="lg" />
       <div class="pl-4 text-base opacity-80">{readTime} min read</div>
     </div>
-    <ul class="my-4">
+    <ul class="mb-4">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
     </ul>
     <article id="article" role="article" class="prose mx-auto max-w-3xl">
@@ -65,7 +65,7 @@ const readTime = countReadTime(post.body);
     </article>
 
     <div
-      class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
+      class="my-6 flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
     >
       <button
         id="back-to-top"
@@ -98,7 +98,7 @@ const readTime = countReadTime(post.body);
     @apply mx-auto w-full max-w-3xl px-4 pb-12;
   }
   .post-title {
-    @apply text-2xl font-semibold text-skin-accent;
+    @apply text-2xl font-semibold text-skin-accent mt-6;
   }
 </style>
 
