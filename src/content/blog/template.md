@@ -1,7 +1,7 @@
 ---
 title: Adding new blog template
 description: adding a new blog template
-pubDate: 2024/02/24
+pubDate: 2018/02/24
 slug: template
 draft: true
 tags:
@@ -11,8 +11,6 @@ tags:
 ## Table of contents
 
 ## Inside `src/assets/` directory (recommended)
-
-Example: Suppose you want to display `example.jpg` whose path is `/src/assets/images/example.jpg`.
 
 ```md
 ![something](@assets/images/example.jpg)
@@ -27,8 +25,6 @@ Example: Suppose you want to display `example.jpg` whose path is `/src/assets/im
 ```
 
 ### Inside `public` directory
-
-Example: Assume `example.jpg` is located at `/public/assets/images/example.jpg`.
 
 ```md
 ![something](/assets/images/example.jpg)

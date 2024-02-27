@@ -5,7 +5,7 @@ pubDate: 2020/04/04
 slug: the-spa-page-opens-in-seconds
 draft: false
 tags:
-  - performance
+  - Performance
 ---
 
 ## Table of contents
