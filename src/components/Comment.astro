@@ -1,0 +1,16 @@
+---
+import { COMMENT_CONFIG } from "@config";
+---
+
+{
+  COMMENT_CONFIG.enable && COMMENT_CONFIG.repo && (
+    <script
+      src="https://utteranc.es/client.js"
+      repo={COMMENT_CONFIG.repo}
+      issue-term="title"
+      theme="preferred-color-scheme"
+      crossorigin="anonymous"
+      async
+    />
+  )
+}

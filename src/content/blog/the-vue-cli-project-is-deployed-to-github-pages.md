@@ -11,9 +11,9 @@ tags:
 
 ## Table of contents
 
-github pages 是 github 免费为用户提供的服务，写博客，或者部署一些纯静态项目。
+Github Pages 是 github 免费为用户提供的服务，写博客，或者部署一些纯静态项目。
 
-最近将 vue cli 3.x 初始化项目部署到 github pages，踩了一些坑，记录如下。
+最近将 Vue cli 3.x 初始化项目部署到 github pages，踩了一些坑，记录如下。
 
 [https://github.com/nusr/resume-vue](https://github.com/nusr/resume-vue)
 

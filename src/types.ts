@@ -14,7 +14,7 @@ export type Site = {
 export type SocialObjects = {
   name: keyof typeof socialIcons;
   href: string;
-  active: boolean;
+  enable: boolean;
   linkTitle: string;
 }[];
 
@@ -22,5 +22,5 @@ export type ShareLinkItem = {
   name: string;
   href: string;
   linkTitle: string;
-  active: boolean;
+  enable: boolean;
 };

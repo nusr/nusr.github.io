@@ -1,11 +1,12 @@
 ---
-import { GA_ID } from "@config";
+export interface Props {
+  noMarginTop?: boolean;
+}
 
-const gtagUrl = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-const id = GA_ID;
+const { id } = Astro.props;
+const gtagUrl = `https://www.googletagmanager.com/gtag/js?id=${id}`;
 ---
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src={gtagUrl}></script>
 <script define:vars={{ id }}>
   window.dataLayer = window.dataLayer || [];

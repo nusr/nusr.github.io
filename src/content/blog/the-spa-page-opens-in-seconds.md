@@ -10,6 +10,8 @@ tags:
 
 ## Table of contents
 
+SPA 页面秒开从未如此简单。
+
 ## 一、编译构建
 
 ## 1. tree shaking

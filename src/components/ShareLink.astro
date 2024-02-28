@@ -4,14 +4,13 @@ import { SHARE_LINKS } from "../config";
 import socialIcons from "@assets/socialIcons";
 
 const URL = Astro.url;
-const linkList = SHARE_LINKS.filter(v => v.active);
 ---
 
 <div class={`social-icons`}>
   <span class="italic">Share this post on:</span>
   <div class="text-center">
     {
-      linkList.map(social => (
+      SHARE_LINKS.filter(v => v.enable).map(social => (
         <LinkButton
           href={`${social.href + URL}`}
           className="link-button"

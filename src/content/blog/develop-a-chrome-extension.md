@@ -11,7 +11,7 @@ tags:
 
 ## Table of contents
 
-> 整理 Kindle 标注、书签和笔记从未如此简单！
+整理 Kindle 标注、书签和笔记从未如此简单！
 
 Kindle 标注管理应用 [Kindle Mate](https://kmate.me/cn/) 只支持 Windows，不支持 Mac。标注只是解析**我的剪贴**文本文件，配合 [FileReader](https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader) API，写个 Chrome 扩展解析文本文件就好了。
 

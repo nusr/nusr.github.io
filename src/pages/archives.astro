@@ -2,10 +2,11 @@
 import { getCollection } from "astro:content";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import DateTime from "@components/Datetime.tsx";
+import FormatDate from "@components/FormatDate.tsx";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import getPostArchives from "@utils/getPostArchives";
+import BackToTop from "@components/BackToTop.astro";
 
 import { SITE } from "@config";
 
@@ -37,7 +38,10 @@ yearList.sort((a, b) => b - a);
                       {post.title}
                     </a>
                     <div class="date">
-                      <DateTime pubDate={post.pubDate} modDate={post.modDate} />
+                      <FormatDate
+                        pubDate={post.pubDate}
+                        modDate={post.modDate}
+                      />
                     </div>
                   </div>
                 ))}
@@ -46,6 +50,9 @@ yearList.sort((a, b) => b - a);
           ))
         }
       </div>
+    </div>
+    <div class="flex justify-end">
+      <BackToTop />
     </div>
   </Main>
   <Footer />

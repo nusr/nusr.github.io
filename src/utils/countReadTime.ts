@@ -9,3 +9,14 @@ function countReadTime(markdownString: string): number {
 }
 
 export default countReadTime;
+
+export function extractDescriptionFromContent(content: string) {
+  if (!content) {
+    return "";
+  }
+  const list = content
+    .split("\n")
+    .map(item => item.trim())
+    .filter(v => v);
+  return /^#/.test(list[1]) ? "" : list[1];
+}

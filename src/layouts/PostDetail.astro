@@ -3,12 +3,14 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
-import Datetime from "@components/Datetime";
+import FormatDate from "@components/FormatDate";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
-import ShareLinks from "@components/ShareLinks.astro";
-import { SITE, COMMENT_CONFIG } from "@config";
+import ShareLink from "@components/ShareLink.astro";
+import { SITE } from "@config";
 import countReadTime from "@utils/countReadTime";
+import Comment from "@components/Comment.astro";
+import BackToTop from "@components/BackToTop.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -54,8 +56,12 @@ const readTime = countReadTime(post.body);
   <main id="main-content">
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
     <div class="my-2 flex items-center">
-      <Datetime pubDate={pubDate} modDate={modDate} size="lg" />
-      <div class="pl-4 text-base opacity-80">{readTime} min read</div>
+      <FormatDate pubDate={pubDate} modDate={modDate} size="lg" />
+      {
+        readTime > 0 && (
+          <div class="pl-4 text-base opacity-80">{readTime} min read</div>
+        )
+      }
     </div>
     <ul class="mb-4">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
@@ -67,28 +73,10 @@ const readTime = countReadTime(post.body);
     <div
       class="my-6 flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
     >
-      <button
-        id="back-to-top"
-        class="focus-outline whitespace-nowrap py-1 hover:opacity-75"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90">
-          <path
-            d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
-          ></path>
-        </svg>
-        <span>Back to Top</span>
-      </button>
-
-      <ShareLinks />
+      <BackToTop />
+      <ShareLink />
     </div>
-    <script
-      src={COMMENT_CONFIG.src}
-      repo={COMMENT_CONFIG.repo}
-      issue-term={COMMENT_CONFIG.issueTerm}
-      theme={COMMENT_CONFIG.theme}
-      crossorigin={COMMENT_CONFIG.crossOrigin}
-      label={COMMENT_CONFIG.label}
-      async></script>
+    <Comment />
   </main>
   <Footer />
 </Layout>
@@ -98,13 +86,14 @@ const readTime = countReadTime(post.body);
     @apply mx-auto w-full max-w-3xl px-4 pb-12;
   }
   .post-title {
-    @apply text-2xl font-semibold text-skin-accent mt-6;
+    @apply mt-6 text-2xl font-semibold text-skin-accent;
   }
 </style>
 
 <script is:inline>
   /** Create a progress indicator
    *  at the top */
+  const progressBarId = "_progress_bar";
   function createProgressBar() {
     // Create the main container div
     const progressContainer = document.createElement("div");
@@ -114,7 +103,7 @@ const readTime = countReadTime(post.body);
     // Create the progress bar div
     const progressBar = document.createElement("div");
     progressBar.className = "progress-bar h-1 w-0 bg-skin-accent";
-    progressBar.id = "myBar";
+    progressBar.id = progressBarId;
 
     // Append the progress bar to the progress container
     progressContainer.appendChild(progressBar);
@@ -134,7 +123,7 @@ const readTime = countReadTime(post.body);
       document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
     if (document) {
-      const myBar = document.getElementById("myBar");
+      const myBar = document.getElementById(progressBarId);
       if (myBar) {
         myBar.style.width = scrolled + "%";
       }
@@ -199,14 +188,4 @@ const readTime = countReadTime(post.body);
     }
   }
   attachCopyButtons();
-
-  /** Scrolls the document to the top when
-   * the "Back to Top" button is clicked. */
-  function backToTop() {
-    document.querySelector("#back-to-top")?.addEventListener("click", () => {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    });
-  }
-  backToTop();
 </script>

@@ -1,17 +1,20 @@
 import { slugifyStr } from "@utils/slugify";
-import Datetime from "./Datetime";
+import FormatDate from "./FormatDate";
 import type { CollectionEntry } from "astro:content";
+// import { extractDescriptionFromContent } from "@utils/countReadTime";
 
 export interface Props {
   href?: string;
   frontMatter: CollectionEntry<"blog">["data"];
   secHeading?: boolean;
+  body?: string;
 }
 
 export default function Card({
   href,
   frontMatter,
   secHeading = true,
+  // body = "",
 }: Props) {
   const { title, pubDate, modDate, description } = frontMatter;
 
@@ -32,7 +35,7 @@ export default function Card({
           <h3 {...headerProps}>{title}</h3>
         )}
       </a>
-      <Datetime pubDate={pubDate} modDate={modDate} />
+      <FormatDate pubDate={pubDate} modDate={modDate} />
       <p>{description}</p>
     </li>
   );

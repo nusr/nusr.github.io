@@ -10,6 +10,8 @@ tags:
 
 ## Table of contents
 
+适配 Dark Mode 从未如此简单。
+
 ## 1. 使用选择器覆盖实现
 
 这种方法兼容性最好，但是要多写很多代码。

@@ -1,16 +1,16 @@
 import { LOCALE } from "@config";
 
-interface DatetimeProps {
+interface FormatDateProps {
   pubDate: Date;
   modDate: Date | undefined | null;
 }
 
-interface Props extends DatetimeProps {
+interface Props extends FormatDateProps {
   size?: "sm" | "lg";
   className?: string;
 }
 
-export default function Datetime({
+export default function FormatDate({
   pubDate,
   modDate,
   size = "sm",

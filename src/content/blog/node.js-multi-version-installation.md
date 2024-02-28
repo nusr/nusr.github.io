@@ -10,10 +10,7 @@ tags:
 
 ## Table of contents
 
-- Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine（Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境）。
-- Node.js 跨平台，支持 Windows、 Linux、Mac,
-- 2018.10.8 Node.js 最新版本 10.11.0
-- Node.js 的包管理器 npm，是全球最大的开源库生态系统。
+Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine（Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境）。
 
 ## 单个 Node.js 版本的安装
 

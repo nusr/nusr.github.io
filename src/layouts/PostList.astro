@@ -23,7 +23,7 @@ const { currentPage, totalPages, paginatedPosts, total } = Astro.props;
     <ul>
       {
         paginatedPosts.map(({ data, slug, body }) => (
-          <Card href={`/posts/${slug}/`} frontMatter={data} />
+          <Card href={`/posts/${slug}/`} frontMatter={data} body={body} />
         ))
       }
     </ul>

@@ -10,7 +10,7 @@ tags:
 
 ## Table of contents
 
-> [Unstated Next](https://github.com/jamiebuilds/unstated-next) README 的中文翻译
+[Unstated Next](https://github.com/jamiebuilds/unstated-next) README 的中文翻译
 
 ## 前言
 
