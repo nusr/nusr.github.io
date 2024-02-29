@@ -62,7 +62,7 @@ hugo new site blog
 
 创建完成后，在 **blog** 文件夹下会生成以下文件结构：
 
-```text
+```plaintext
 .
 ├── archetypes # 存放生成博客的模版
 ├── assets # 存放被 Hugo Pipes 处理的文件
@@ -130,7 +130,7 @@ hugo new post/my-first-blog.md
 
 我的模板配置如下：
 
-```text
+```plaintext
 
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
