@@ -25,7 +25,7 @@ export const LOGO_IMAGE = {
 
 // comment config https://utteranc.es
 export const COMMENT_CONFIG = {
-  repo: "nusr/nusr.github.io",
+  repo: "nusr/nusr",
   enable: true,
 } as const;
 
