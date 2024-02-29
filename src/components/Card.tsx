@@ -8,7 +8,7 @@ export interface Props {
   body?: string;
 }
 
-export default function Card({ href, frontMatter, body = "" }: Props) {
+export default function Card({ href, frontMatter }: Props) {
   const { title, pubDate, modDate, description } = frontMatter;
 
   const headerProps = {

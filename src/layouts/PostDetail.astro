@@ -116,7 +116,6 @@ const layoutProps = {
 <script is:inline>
   /** Create a progress indicator
    *  at the top */
-  const progressBarId = "_progress_bar";
   function createProgressBar() {
     // Create the main container div
     const progressContainer = document.createElement("div");
@@ -126,7 +125,7 @@ const layoutProps = {
     // Create the progress bar div
     const progressBar = document.createElement("div");
     progressBar.className = "progress-bar h-1 w-0 bg-skin-accent";
-    progressBar.id = progressBarId;
+    progressBar.id = "_progress_bar";
 
     // Append the progress bar to the progress container
     progressContainer.appendChild(progressBar);
@@ -137,7 +136,9 @@ const layoutProps = {
   createProgressBar();
   function updateToc(winScroll) {
     const dom = document.querySelector("#toc-menu");
-    dom.classList.toggle("scroll", winScroll > 129);
+    if (dom) {
+      dom.classList.toggle("scroll", winScroll > 129);
+    }
   }
   /** Update the progress bar
    *  when user scrolls */
@@ -149,7 +150,10 @@ const layoutProps = {
       document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
     if (document) {
-      document.getElementById(progressBarId).style.width = scrolled + "%";
+      const dom = document.getElementById("_progress_bar");
+      if (dom) {
+        dom.style.width = scrolled + "%";
+      }
     }
     updateToc(winScroll);
   }

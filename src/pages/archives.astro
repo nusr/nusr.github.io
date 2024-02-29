@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import FormatDate from "@components/FormatDate.tsx";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import getPostArchives from "@utils/getPostArchives";
@@ -25,7 +24,7 @@ yearList.sort((a, b) => b - a);
     pageDesc={`${total} articles in total`}
     class="archives-main"
   >
-    <div class="archives">
+    <div class="archives relative">
       <div class="archives-container">
         {
           yearList.map(year => (
@@ -34,15 +33,14 @@ yearList.sort((a, b) => b - a);
               <div class="section-list">
                 {postData.get(year)!.map(post => (
                   <div class="section-list-item">
-                    <a href={`/posts/${post.url}/`} class="title">
-                      {post.title}
+                    <a
+                      href={`/posts/${post.url}/`}
+                      class="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+                    >
+                      <h2 class="text-lg font-medium decoration-dashed hover:underline">
+                        {post.title}
+                      </h2>
                     </a>
-                    <div class="date">
-                      <FormatDate
-                        pubDate={post.pubDate}
-                        modDate={post.modDate}
-                      />
-                    </div>
                   </div>
                 ))}
               </div>
@@ -59,12 +57,6 @@ yearList.sort((a, b) => b - a);
 </Layout>
 
 <style>
-  #main-content p {
-    margin-bottom: 0;
-  }
-  .archives {
-    position: relative;
-  }
   .archives::before {
     position: absolute;
     top: 2em;
@@ -107,11 +99,5 @@ yearList.sort((a, b) => b - a);
     background-color: rgba(var(--color-accent), var(--tw-text-opacity));
     width: 10px;
     height: 10px;
-  }
-  .title {
-    font-size: 1.2em;
-  }
-  .date > time {
-    font-size: 1em;
   }
 </style>
