@@ -1,5 +1,6 @@
 import type { Site, SocialObjects, ShareLinkItem } from "./types";
 
+// site config
 export const SITE: Site = {
   website: "https://nusr.github.io", // replace this with your deployed domain
   author: "Steve Xu",
@@ -11,11 +12,13 @@ export const SITE: Site = {
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
+// language config
 export const LOCALE = {
-  lang: "en", // html lang code. Set this empty and default will be "en"
+  lang: "zh", // html lang code. Set this empty and default will be "en"
   langTag: ["zh-cn"], // BCP 47 Language Tags. Set this empty [] to use the environment default
 };
 
+// logo title config
 export const LOGO_IMAGE = {
   enable: false,
   svg: false,
@@ -25,16 +28,17 @@ export const LOGO_IMAGE = {
 
 // comment config https://utteranc.es
 export const COMMENT_CONFIG = {
-  repo: "nusr/nusr",
+  repo: "nusr/nusr.github.io",
   enable: true,
 } as const;
 
-// google-analytics
+// google analytics config
 export const GA_CONFIG = {
   id: "UA-138883536-1",
   enable: true,
 } as const;
 
+// share config
 export const SHARE_LINKS: ShareLinkItem[] = [
   {
     name: "WhatsApp",
@@ -74,132 +78,133 @@ export const SHARE_LINKS: ShareLinkItem[] = [
   },
 ] as const;
 
+// social media config
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
     href: "https://github.com/nusr/nusr.github.io",
-    linkTitle: ` ${SITE.title} on Github`,
+    linkTitle: `${SITE.author} on Github`,
     enable: true,
   },
   {
     name: "Rss",
     href: "/rss.xml",
-    linkTitle: ` ${SITE.title} RSS`,
+    linkTitle: `${SITE.author} RSS`,
     enable: true,
   },
   {
     name: "Twitter",
     href: "https://twitter.com/stevenusr",
-    linkTitle: `${SITE.title} on Twitter`,
+    linkTitle: `${SITE.author} on Twitter`,
     enable: true,
   },
   {
     name: "Mail",
     href: "mailto:stevexugc@gmail.com",
-    linkTitle: `Send an email to ${SITE.title}`,
+    linkTitle: `Send an email to ${SITE.author}`,
     enable: true,
   },
   {
     name: "Facebook",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Facebook`,
+    linkTitle: `${SITE.author} on Facebook`,
     enable: false,
   },
   {
     name: "Instagram",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Instagram`,
+    linkTitle: `${SITE.author} on Instagram`,
     enable: false,
   },
   {
     name: "LinkedIn",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on LinkedIn`,
+    linkTitle: `${SITE.author} on LinkedIn`,
     enable: false,
   },
 
   {
     name: "Twitch",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Twitch`,
+    linkTitle: `${SITE.author} on Twitch`,
     enable: false,
   },
   {
     name: "YouTube",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on YouTube`,
+    linkTitle: `${SITE.author} on YouTube`,
     enable: false,
   },
   {
     name: "WhatsApp",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on WhatsApp`,
+    linkTitle: `${SITE.author} on WhatsApp`,
     enable: false,
   },
   {
     name: "Snapchat",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Snapchat`,
+    linkTitle: `${SITE.author} on Snapchat`,
     enable: false,
   },
   {
     name: "Pinterest",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Pinterest`,
+    linkTitle: `${SITE.author} on Pinterest`,
     enable: false,
   },
   {
     name: "TikTok",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on TikTok`,
+    linkTitle: `${SITE.author} on TikTok`,
     enable: false,
   },
   {
     name: "CodePen",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on CodePen`,
+    linkTitle: `${SITE.author} on CodePen`,
     enable: false,
   },
   {
     name: "Discord",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Discord`,
+    linkTitle: `${SITE.author} on Discord`,
     enable: false,
   },
   {
     name: "GitLab",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on GitLab`,
+    linkTitle: `${SITE.author} on GitLab`,
     enable: false,
   },
   {
     name: "Reddit",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Reddit`,
+    linkTitle: `${SITE.author} on Reddit`,
     enable: false,
   },
   {
     name: "Skype",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Skype`,
+    linkTitle: `${SITE.author} on Skype`,
     enable: false,
   },
   {
     name: "Steam",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Steam`,
+    linkTitle: `${SITE.author} on Steam`,
     enable: false,
   },
   {
     name: "Telegram",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Telegram`,
+    linkTitle: `${SITE.author} on Telegram`,
     enable: false,
   },
   {
     name: "Mastodon",
     href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Mastodon`,
+    linkTitle: `${SITE.author} on Mastodon`,
     enable: false,
   },
 ] as const;
