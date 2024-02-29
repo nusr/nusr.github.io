@@ -8,8 +8,6 @@ tags:
   - CSS
 ---
 
-## Table of contents
-
 适配 Dark Mode 从未如此简单。
 
 ## 1. 使用选择器覆盖实现

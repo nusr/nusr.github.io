@@ -10,8 +10,6 @@ tags:
   - Meteor
 ---
 
-## Table of contents
-
 [meteor](https://www.meteor.com/) 可以快速构建 pc,移动端，桌面端应用。
 
 最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。

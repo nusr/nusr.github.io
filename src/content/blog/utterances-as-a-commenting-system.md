@@ -8,8 +8,6 @@ tags:
   - Blog
 ---
 
-## Table of contents
-
 [utterances](https://github.com/utterance/utterances) 是一款基于 GitHub issues 的评论工具。
 
 相比同类的工具 gitment、gitalk 以及 disqus 评论工具，优点如下：

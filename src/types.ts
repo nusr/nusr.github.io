@@ -24,3 +24,10 @@ export type ShareLinkItem = {
   linkTitle: string;
   enable: boolean;
 };
+
+
+export type TOCItem = {
+  title: string;
+  url: string;
+  depth: number;
+}

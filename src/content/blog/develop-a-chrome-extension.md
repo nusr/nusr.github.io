@@ -9,8 +9,6 @@ tags:
   - Chrome
 ---
 
-## Table of contents
-
 整理 Kindle 标注、书签和笔记从未如此简单！
 
 Kindle 标注管理应用 [Kindle Mate](https://kmate.me/cn/) 只支持 Windows，不支持 Mac。标注只是解析**我的剪贴**文本文件，配合 [FileReader](https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader) API，写个 Chrome 扩展解析文本文件就好了。
@@ -85,7 +83,7 @@ npm i -D node-sass
 要解析的文本为下面的格式，使用简单的正则表达式即可解析。
 **根据 Kindle 设置的语言，中文与英文的格式会稍有不同，需要做不同的解析。**
 
-```txt
+```text
 ==========
 娱乐至死 (尼尔·波兹曼)
 - 您在位置 #1882-1884的标注 | 添加于 2019年6月2日星期日 上午10:07:30

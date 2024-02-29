@@ -1,0 +1,49 @@
+---
+import type { TOCItem } from "../types";
+
+export type Props = {
+  toc: TOCItem[];
+  isSort?: boolean;
+  depth?: number;
+  maxDepth?: number;
+};
+
+const { toc, depth = 1, ...props } = Astro.props as Props;
+const { isSort = false, maxDepth = 6 } = props;
+const headings = toc.filter(it => it.depth === depth);
+const Tag = isSort ? "ul" : "ol";
+const className = depth > 1 ? "ml-4" : "";
+---
+
+<Tag data-astro-toc={depth} class={className}>
+  {
+    headings.map((it, idx) => {
+      const nextHeading = headings[idx + 1];
+      const subHeadings = toc.slice(
+        toc.indexOf(it) + 1,
+        nextHeading ? toc.indexOf(nextHeading) : undefined
+      );
+      const shouldRenderSubHeadings = maxDepth
+        ? maxDepth > it.depth
+        : subHeadings.length > 0;
+
+      return (
+        <li data-astro-toc={depth} class="underline-offset-4">
+          <a href={it.url} class="group pr-2 text-sm relative underline decoration-dashed hover:-top-0.5 hover:text-skin-accent focus-visible:p-1">
+            {it.title}
+          </a>
+          {shouldRenderSubHeadings && (
+            <Astro.self toc={subHeadings} depth={it.depth + 1} {...props} />
+          )}
+        </li>
+      );
+    })
+  }
+</Tag>
+
+
+<style>
+  a {
+    @apply relative underline decoration-dashed hover:-top-0.5 hover:text-skin-accent focus-visible:p-1;
+  }
+</style>

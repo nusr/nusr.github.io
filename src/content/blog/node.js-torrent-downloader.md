@@ -9,8 +9,6 @@ tags:
   - Downloader
 ---
 
-## Table of contents
-
 庆祝 2018 国庆，制作了一个 `Node.js` 的种子下载器。爬取页面，根据页面的链接，破解另外一个网站，下载种子文件。项目比较简单，爬取页面没有使用任何爬虫框架。[项目源码](https://github.com/nusr/FBIWarning)
 
 `Node.js` 的安装请看我的另外一篇文章，[Node.js 的多版本安装](https://www.cnblogs.com/stevexu/p/9734249.html)。

@@ -8,8 +8,6 @@ tags:
   - Performance
 ---
 
-## Table of contents
-
 SPA 页面秒开从未如此简单。
 
 ## 一、编译构建
@@ -44,7 +42,6 @@ gzip  on;
 gzip_comp_level 4;
 gzip_buffers  4 16k;
 gzip_types text/javascript text/plain text/css text/xml application/javascript application/x-javascript application/xml  application/x-httpd-php application/vnd.ms-fontobject font/ttf font/opentype font/x-woff image/svg+xml;
-#gzip_min_length 1k;
 gzip_http_version 1.1;
 ```
 

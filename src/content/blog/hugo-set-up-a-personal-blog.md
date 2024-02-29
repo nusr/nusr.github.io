@@ -9,8 +9,6 @@ tags:
   - Blog
 ---
 
-## Table of contents
-
 尝试过 Hexo 、GatsbyJs、 Vuepress 搭建博客后，对这些工具最大的不满，就是运行速度以及打包速度。
 
 后来看到 [Hugo](https://gohugo.io/) ,号称最快的静态站点生成器后。
@@ -64,7 +62,7 @@ hugo new site blog
 
 创建完成后，在 **blog** 文件夹下会生成以下文件结构：
 
-```txt
+```text
 .
 ├── archetypes # 存放生成博客的模版
 ├── assets # 存放被 Hugo Pipes 处理的文件
@@ -132,7 +130,7 @@ hugo new post/my-first-blog.md
 
 我的模板配置如下：
 
-```txt
+```text
 
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"

@@ -8,8 +8,6 @@ tags:
   - Node.js
 ---
 
-## Table of contents
-
 Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine（Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境）。
 
 ## 单个 Node.js 版本的安装

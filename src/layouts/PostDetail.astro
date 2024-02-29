@@ -8,9 +8,10 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLink from "@components/ShareLink.astro";
 import { SITE } from "@config";
-import countReadTime from "@utils/countReadTime";
+import countReadTime, { extractTOC } from "@utils/countReadTime";
 import Comment from "@components/Comment.astro";
 import BackToTop from "@components/BackToTop.astro";
+import TOC from "@components/TOC.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -21,12 +22,12 @@ const { post } = Astro.props;
 const {
   title,
   author,
-  description,
   ogImage,
   canonicalURL,
   pubDate,
   modDate,
   tags,
+  description,
 } = post.data;
 
 const { Content } = await post.render();
@@ -36,6 +37,8 @@ const ogUrl = new URL(
   ogImageUrl ?? `/posts/${slugifyStr(title)}.png`,
   Astro.url.origin
 ).href;
+const readTime = countReadTime(post.body);
+const tocList = extractTOC(post.body);
 
 const layoutProps = {
   title: `${title} | ${SITE.title}`,
@@ -47,12 +50,11 @@ const layoutProps = {
   ogImage: ogUrl,
   scrollSmooth: true,
 };
-
-const readTime = countReadTime(post.body);
 ---
 
 <Layout {...layoutProps}>
   <Header />
+
   <main id="main-content">
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
     <div class="my-2 flex items-center">
@@ -78,15 +80,36 @@ const readTime = countReadTime(post.body);
     </div>
     <Comment />
   </main>
+  <div class="toc-container init bg-skin-fill" id="toc-menu">
+    <TOC toc={tocList} isSort />
+  </div>
   <Footer />
 </Layout>
 
 <style>
   main {
-    @apply mx-auto w-full max-w-3xl px-4 pb-12;
+    @apply relative mx-auto w-full max-w-3xl px-4 pb-12;
   }
   .post-title {
     @apply mt-6 text-2xl font-semibold text-skin-accent;
+  }
+  .toc-container {
+    right: 0;
+    z-index: 3;
+    width: 200px;
+  }
+  @media screen and (max-width: 1136px) {
+    .toc-container {
+      display: none;
+    }
+  }
+  .toc-container.init {
+    top: 129px;
+    position: absolute;
+  }
+  .toc-container.init.scroll {
+    top: 0;
+    position: fixed;
   }
 </style>
 
@@ -112,7 +135,10 @@ const readTime = countReadTime(post.body);
     document.body.appendChild(progressContainer);
   }
   createProgressBar();
-
+  function updateToc(winScroll) {
+    const dom = document.querySelector("#toc-menu");
+    dom.classList.toggle("scroll", winScroll > 129);
+  }
   /** Update the progress bar
    *  when user scrolls */
   function updateScrollProgress() {
@@ -123,12 +149,11 @@ const readTime = countReadTime(post.body);
       document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
     if (document) {
-      const myBar = document.getElementById(progressBarId);
-      if (myBar) {
-        myBar.style.width = scrolled + "%";
-      }
+      document.getElementById(progressBarId).style.width = scrolled + "%";
     }
+    updateToc(winScroll);
   }
+
   document.addEventListener("scroll", updateScrollProgress);
 
   /** Attaches links to headings in the document,

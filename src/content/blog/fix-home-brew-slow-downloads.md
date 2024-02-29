@@ -9,8 +9,6 @@ tags:
   - Mac
 ---
 
-## Table of contents
-
 **macOS** 自身不提供包管理器，常用的包管理器有
 
 1. [HomeBrew](https://brew.sh/)

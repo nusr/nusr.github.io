@@ -9,8 +9,6 @@ tags:
   - Mac
 ---
 
-## Table of contents
-
 React-Native 开发的项目，Android 方面没有任何问题，IOS 就是无法跑起来，报错信息如下：
 
 mac 10.14.4 xcode 10.2.1

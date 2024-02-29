@@ -15,6 +15,7 @@ const URL = Astro.url;
           href={`${social.href + URL}`}
           className="link-button"
           title={social.linkTitle}
+          isBlank
         >
           <Fragment set:html={socialIcons[social.name]} />
           <span class="sr-only">{social.linkTitle}</span>

@@ -9,8 +9,6 @@ tags:
   - Kindle
 ---
 
-## Table of contents
-
 kindle 分 kindle 电子阅读器，pc 版，app 版，下文主要介绍 Amazon 设计和销售的电子书阅读器。
 
 [亚马逊官方出的 kindle 使用技巧](https://www.amazon.cn/b?node=1935454071)
