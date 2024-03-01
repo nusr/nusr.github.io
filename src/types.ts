@@ -27,7 +27,7 @@ export type ShareLinkItem = {
 
 
 export type TOCItem = {
-  title: string;
-  url: string;
+  text: string;
+  slug: string;
   depth: number;
 }

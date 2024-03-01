@@ -27,16 +27,10 @@ export const LOGO_IMAGE = {
 } as const;
 
 // comment config https://utteranc.es
-export const COMMENT_CONFIG = {
-  repo: "nusr/nusr.github.io",
-  enable: true,
-} as const;
+export const COMMENT_CONFIG = "nusr/nusr.github.io";
 
 // google analytics config
-export const GA_CONFIG = {
-  id: "UA-138883536-1",
-  enable: true,
-} as const;
+export const GA_CONFIG = "UA-138883536-1";
 
 // share config
 export const SHARE_LINKS: ShareLinkItem[] = [

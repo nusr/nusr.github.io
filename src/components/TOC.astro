@@ -8,11 +8,13 @@ export type Props = {
   maxDepth?: number;
 };
 
-const { toc, depth = 1, ...props } = Astro.props as Props;
+const initDepth = 2;
+
+const { toc, depth = initDepth, ...props } = Astro.props as Props;
 const { isSort = false, maxDepth = 6 } = props;
 const headings = toc.filter(it => it.depth === depth);
 const Tag = isSort ? "ul" : "ol";
-const className = depth > 1 ? "ml-4" : "";
+const className = depth > initDepth ? "ml-4" : "";
 ---
 
 <Tag data-astro-toc={depth} class={className}>
@@ -29,8 +31,11 @@ const className = depth > 1 ? "ml-4" : "";
 
       return (
         <li data-astro-toc={depth} class="underline-offset-4">
-          <a href={it.url} class="group pr-2 text-sm relative underline decoration-dashed hover:-top-0.5 hover:text-skin-accent focus-visible:p-1">
-            {it.title}
+          <a
+            href={`#${it.slug}`}
+            class="group relative pr-2 text-sm underline decoration-dashed hover:-top-0.5 hover:text-skin-accent focus-visible:p-1"
+          >
+            {it.text}
           </a>
           {shouldRenderSubHeadings && (
             <Astro.self toc={subHeadings} depth={it.depth + 1} {...props} />
@@ -40,7 +45,6 @@ const className = depth > 1 ? "ml-4" : "";
     })
   }
 </Tag>
-
 
 <style>
   a {

@@ -7,9 +7,8 @@ import FormatDate from "@components/FormatDate";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLink from "@components/ShareLink.astro";
-import { SITE } from "@config";
-import countReadTime, { extractTOC } from "@utils/countReadTime";
-import Comment from "@components/Comment.astro";
+import { SITE, COMMENT_CONFIG } from "@config";
+import countReadTime from "@utils/countReadTime";
 import BackToTop from "@components/BackToTop.astro";
 import TOC from "@components/TOC.astro";
 
@@ -30,15 +29,10 @@ const {
   description,
 } = post.data;
 
-const { Content } = await post.render();
-
+const { Content, headings, remarkPluginFrontmatter } = await post.render();
+const { readingSeconds } = remarkPluginFrontmatter || {};
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
-const ogUrl = new URL(
-  ogImageUrl ?? `/posts/${slugifyStr(title)}.png`,
-  Astro.url.origin
-).href;
-const readTime = countReadTime(post.body);
-const tocList = extractTOC(post.body);
+const ogUrl = new URL(ogImageUrl, Astro.url.origin).href;
 
 const layoutProps = {
   title: `${title} | ${SITE.title}`,
@@ -60,8 +54,8 @@ const layoutProps = {
     <div class="my-2 flex items-center">
       <FormatDate pubDate={pubDate} modDate={modDate} size="lg" />
       {
-        readTime > 0 && (
-          <div class="pl-4 text-base opacity-80">{readTime} min read</div>
+        readingSeconds > 0 && (
+          <div class="pl-4 text-base opacity-80">{readingSeconds} min read</div>
         )
       }
     </div>
@@ -80,9 +74,21 @@ const layoutProps = {
     </div>
   </main>
   <div class="toc-container init bg-skin-fill" id="toc-menu">
-    <TOC toc={tocList} isSort />
+    <TOC toc={headings} isSort />
   </div>
-  <Comment />
+  {
+    COMMENT_CONFIG && (
+      <script
+        src="https://utteranc.es/client.js"
+        repo={COMMENT_CONFIG}
+        issue-term="title"
+        theme="preferred-color-scheme"
+        label="comment"
+        crossorigin="anonymous"
+        async
+      />
+    )
+  }
   <Footer />
 </Layout>
 

@@ -1,8 +1,7 @@
 ---
-import { SITE } from "@config";
+import { SITE, COMMENT_CONFIG } from "@config";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
-import Comment from "@components/Comment.astro";
 import Layout from "./Layout.astro";
 
 export interface Props {
@@ -25,6 +24,18 @@ const { frontmatter } = Astro.props;
       <p class="mt-4"><slot /></p>
     </section>
   </main>
-  <Comment />
+  {
+    COMMENT_CONFIG && (
+      <script
+        src="https://utteranc.es/client.js"
+        repo={COMMENT_CONFIG}
+        issue-term="title"
+        theme="preferred-color-scheme"
+        label="comment"
+        crossorigin="anonymous"
+        async
+      />
+    )
+  }
   <Footer />
 </Layout>

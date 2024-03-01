@@ -18,7 +18,7 @@ const blog = defineCollection({
         })
         .or(z.string())
         .optional(), // OG image of the post. Useful for social media sharing and SEO.
-      canonicalURL: z.string().optional(), // Canonical URL (absolute), in case the article already exists on other source.
+      canonicalURL: z.string().url().optional(), // Canonical URL (absolute), in case the article already exists on other source.
     }),
 });
 

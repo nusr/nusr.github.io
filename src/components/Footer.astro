@@ -12,7 +12,9 @@ const { noMarginTop = false } = Astro.props;
 ---
 
 <footer class={`${noMarginTop ? "" : "mt-auto"}`}>
-  <Hr noPadding />
+  <div class="mx-auto max-w-3xl px-0">
+    <hr class="border-skin-line" aria-hidden />
+  </div>
   <div class="footer-wrapper">
     <SocialLink centered />
     <div class="copyright-wrapper">
