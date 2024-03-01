@@ -38,7 +38,7 @@ svg 文件会导入到 HTML 文件中，无需使用两张 png 切换
 ```js
 // ./vue.config.js
 module.exports = {
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     const svgRule = config.module.rule("svg");
     svgRule.uses.clear();
     svgRule

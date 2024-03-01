@@ -8,7 +8,6 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLink from "@components/ShareLink.astro";
 import { SITE, COMMENT_CONFIG } from "@config";
-import countReadTime from "@utils/countReadTime";
 import BackToTop from "@components/BackToTop.astro";
 import TOC from "@components/TOC.astro";
 
@@ -60,7 +59,7 @@ const layoutProps = {
       }
     </div>
     <ul class="mb-4">
-      {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
+      {tags.map((tag) => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
     </ul>
     <article id="article" role="article" class="prose mx-auto max-w-3xl">
       <Content />

@@ -11,8 +11,8 @@ interface Tag {
 const getUniqueTags = (blog: CollectionEntry<"blog">[]) => {
   const tagList = blog
     .filter(postFilter)
-    .flatMap(post => post.data.tags)
-    .map(tag => ({ tag: slugifyStr(tag), tagName: tag }));
+    .flatMap((post) => post.data.tags)
+    .map((tag) => ({ tag: slugifyStr(tag), tagName: tag }));
   const record: Record<string, Tag> = {};
   for (const item of tagList) {
     if (record[item.tag]) {

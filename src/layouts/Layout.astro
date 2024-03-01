@@ -29,7 +29,7 @@ const {
 
 const socialImageURL = new URL(
   ogImage ?? SITE.ogImage ?? "og.png",
-  Astro.url.origin
+  Astro.url.origin,
 ).href;
 ---
 
@@ -110,11 +110,11 @@ const socialImageURL = new URL(
       )
     }
     <script async define:vars={{ id: GA_CONFIG }}>
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
       if (id) {
         window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
         gtag("js", new Date());
         gtag("config", id);
       }

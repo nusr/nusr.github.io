@@ -22,8 +22,8 @@ const { currentPage, totalPages, paginatedPosts, total } = Astro.props;
   <Main pageTitle="Posts" pageDesc={`${total} articles in total`}>
     <ul>
       {
-        paginatedPosts.map(({ data, slug, body }) => (
-          <Card href={`/posts/${slug}/`} frontMatter={data}/>
+        paginatedPosts.map(({ data, slug }) => (
+          <Card href={`/posts/${slug}/`} frontMatter={data} />
         ))
       }
     </ul>

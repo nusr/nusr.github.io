@@ -17,7 +17,7 @@ const tags = getUniqueTags(blog);
   <Header activeNav="tags" />
   <Main pageTitle="Tags" pageDesc="All the tags used in blog.">
     <ul>
-      {tags.map(item => <Tag {...item} size="lg" />)}
+      {tags.map((item) => <Tag {...item} size="lg" />)}
     </ul>
   </Main>
   <Footer />

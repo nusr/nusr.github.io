@@ -10,7 +10,7 @@ type PostItem = {
 
 function getPostArchives(blog: CollectionEntry<"blog">[]) {
   const sortPosts = getSortedPosts(blog);
-  const postList: PostItem[] = sortPosts.map(post => ({
+  const postList: PostItem[] = sortPosts.map((post) => ({
     url: post.slug,
     title: post.data.title,
     pubDate: post.data.pubDate,
@@ -29,7 +29,7 @@ function getPostArchives(blog: CollectionEntry<"blog">[]) {
 
   return {
     postData,
-    total: sortPosts.length
+    total: sortPosts.length,
   };
 }
 

@@ -94,7 +94,7 @@ import { createContainer } from "unstated-next";
 
 function useCustomHook() {
   let [value, setInput] = useState();
-  let onChange = e => setValue(e.currentTarget.value);
+  let onChange = (e) => setValue(e.currentTarget.value);
   return { value, onChange };
 }
 
@@ -468,7 +468,7 @@ function useCounter() {
 
 let Counter = createContainer(useCounter);
 
-let CounterDisplayInner = React.memo(props => {
+let CounterDisplayInner = React.memo((props) => {
   return (
     <div>
       <button onClick={props.decrement}>-</button>

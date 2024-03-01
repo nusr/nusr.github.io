@@ -171,7 +171,7 @@ Meteor.methods({
       {
         skip: (currentPage - 1) * pageSize,
         limit: pageSize,
-      }
+      },
     ).fetch();
     return { total, data: list };
   },
@@ -262,7 +262,7 @@ export default (WrapperComponent, { collectionName, methodName }) => {
        * 调用后台定义的方法， 前端传递数组参数，meteor 后台接受到的是列表参数
        */
       ddp.method(methodName, [1, 10]);
-      ddp.on("result", data => {
+      ddp.on("result", (data) => {
         const { result } = data;
         console.log(data);
         self.setState({
@@ -286,13 +286,13 @@ export default (WrapperComponent, { collectionName, methodName }) => {
       const self = this;
       // 订阅数据
       self.recordSubscriptions[collectionName] = ddp.sub(collectionName);
-      PUBLIC_EVENTS.forEach(event => {
+      PUBLIC_EVENTS.forEach((event) => {
         ddp.on(event, () => {
           console.log(event);
           self.getDataResult();
         });
       });
-      ddp.on("error", error => {
+      ddp.on("error", (error) => {
         console.error(`服务器推送数据错误,错误消息：${error}`);
       });
       ddp.on("ready", () => {
@@ -328,7 +328,7 @@ function App(props) {
       <List
         itemLayout="horizontal"
         dataSource={meteorList}
-        renderItem={item => (
+        renderItem={(item) => (
           <List.Item key={item.id}>
             <Skeleton loading={!initOver} active avatar>
               <List.Item.Meta title={item.name} description={item.desc} />

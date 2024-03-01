@@ -27,11 +27,11 @@ yearList.sort((a, b) => b - a);
     <div class="archives relative">
       <div class="archives-container">
         {
-          yearList.map(year => (
+          yearList.map((year) => (
             <section class="section-container">
               <h2 class="section-year">{year}</h2>
               <div class="section-list">
-                {postData.get(year)!.map(post => (
+                {postData.get(year)!.map((post) => (
                   <div class="section-list-item">
                     <a
                       href={`/posts/${post.url}/`}

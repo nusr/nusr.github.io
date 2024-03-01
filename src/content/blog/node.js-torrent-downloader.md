@@ -87,7 +87,7 @@ function requestPage(requestUrl) {
           } catch (error) {
             resolve(null);
           }
-        }
+        },
       );
     });
   } catch (error) {
@@ -119,12 +119,12 @@ function innerRecursion() {
     let requestUrl = "http://www.baidu.com?page=" + i; // 事例网站，非爬取网站
     requestUrls.push(requestUrl);
   }
-  let promises = requestUrls.map(url => this.requestPage(url));
+  let promises = requestUrls.map((url) => this.requestPage(url));
   Promise.all(promises)
-    .then(results => {
+    .then((results) => {
       // results 是一个数组，对应上面每个请求的结果
     })
-    .catch(error => {
+    .catch((error) => {
       // 捕获请求中可能发生的错误
       console.log(error);
     });

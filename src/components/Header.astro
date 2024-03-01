@@ -1,6 +1,5 @@
 ---
 import { LOGO_IMAGE, SITE } from "@config";
-import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
 export interface Props {
@@ -210,7 +209,7 @@ const { activeNav } = Astro.props;
       menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true");
       menuBtn.setAttribute(
         "aria-label",
-        menuExpanded ? "Open Menu" : "Close Menu"
+        menuExpanded ? "Open Menu" : "Close Menu",
       );
       menuItems?.classList.toggle("display-none");
     });

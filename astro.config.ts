@@ -8,7 +8,7 @@ export function remarkReadingTime() {
   return function (_: any, frontMatter: any) {
     const result = readingTime(frontMatter.value);
     frontMatter.data.astro.frontmatter.readingSeconds = Math.ceil(
-      result.minutes
+      result.minutes,
     );
     frontMatter.data.astro.frontmatter.readingWords = result.words;
   };

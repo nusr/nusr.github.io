@@ -25,9 +25,8 @@ export type ShareLinkItem = {
   enable: boolean;
 };
 
-
 export type TOCItem = {
   text: string;
   slug: string;
   depth: number;
-}
+};
