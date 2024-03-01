@@ -38,6 +38,9 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: "viewport",
   },
+  devToolbar: {
+    enabled: false
+  },
   experimental: {
     contentCollectionCache: true,
     clientPrerender: true,
