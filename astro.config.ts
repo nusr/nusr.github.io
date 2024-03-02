@@ -34,15 +34,7 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
-  prefetch: {
-    prefetchAll: true,
-    defaultStrategy: "viewport",
-  },
   devToolbar: {
     enabled: false,
-  },
-  experimental: {
-    contentCollectionCache: true,
-    clientPrerender: true,
   },
 });
