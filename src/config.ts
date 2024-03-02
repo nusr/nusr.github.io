@@ -28,7 +28,6 @@ export const LOGO_IMAGE = {
 
 // comment config https://utteranc.es
 export const COMMENT_CONFIG = "nusr/nusr.github.io";
-
 // track config
 export const TRACK_CONFIG = {
   gaId: "UA-138883536-1", // https://www.google-analytics.com
