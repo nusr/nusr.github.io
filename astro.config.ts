@@ -39,7 +39,7 @@ export default defineConfig({
     defaultStrategy: "viewport",
   },
   devToolbar: {
-    enabled: false
+    enabled: false,
   },
   experimental: {
     contentCollectionCache: true,

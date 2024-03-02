@@ -109,5 +109,26 @@ const socialImageURL = new URL(
         <Amplitude apiKey={TRACK_CONFIG.amplitudeApiKey} />
       )
     }
+    <script is:inline async>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js", { scope: "./" })
+          .then(function () {
+            // Registration was successful. Now, check to see whether the service worker is controlling the page.
+            if (!navigator.serviceWorker.controller) {
+              // If .controller isn't set, then prompt the user to reload the page so that the service worker can take
+              // control. Until that happens, the service worker's fetch handler won't be used.
+              console.log(
+                "Please reload this page to allow the service worker to handle network operations.",
+              );
+            }
+          })
+          .catch(function (error) {
+            // Something went wrong during registration. The service-worker.js file
+            // might be unavailable or contain a syntax error.
+            console.error("service-worker.js", error);
+          });
+      }
+    </script>
   </body>
 </html>

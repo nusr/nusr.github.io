@@ -139,5 +139,5 @@ const { apiKey } = Astro.props;
       }
     })(window, document);
   })();
-  amplitude.init(apiKey);
+  window.amplitude.init(apiKey);
 </script>
