@@ -14,10 +14,9 @@ const { toc, depth = initDepth, ...props } = Astro.props as Props;
 const { isSort = false, maxDepth = 6 } = props;
 const headings = toc.filter((it) => it.depth === depth);
 const Tag = isSort ? "ul" : "ol";
-const className = depth > initDepth ? "ml-4" : "";
 ---
 
-<Tag data-astro-toc={depth} class={className}>
+<Tag data-astro-toc={depth} class="ml-4">
   {
     headings.map((it, idx) => {
       const nextHeading = headings[idx + 1];

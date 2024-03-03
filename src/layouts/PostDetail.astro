@@ -72,7 +72,7 @@ const layoutProps = {
       <ShareLink />
     </div>
   </main>
-  <div class="toc-container init bg-skin-fill" id="toc-menu">
+  <div class="toc-container" id="toc-menu">
     <TOC toc={headings} isSort />
   </div>
   {
@@ -99,20 +99,18 @@ const layoutProps = {
     @apply mt-6 text-2xl font-semibold text-skin-accent;
   }
   .toc-container {
-    right: 0;
-    z-index: 3;
+    left: 0;
+    z-index: 1;
     width: 200px;
+    top: 129px;
+    position: absolute;
   }
   @media screen and (max-width: 1136px) {
     .toc-container {
       display: none;
     }
   }
-  .toc-container.init {
-    top: 129px;
-    position: absolute;
-  }
-  .toc-container.init.scroll {
+  .toc-container.scroll {
     top: 0;
     position: fixed;
   }
