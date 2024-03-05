@@ -32,6 +32,7 @@ export const COMMENT_CONFIG = "nusr/nusr.github.io";
 export const TRACK_CONFIG = {
   gaId: "UA-138883536-1", // https://www.google-analytics.com
   amplitudeApiKey: "da1a9b67ea6a904027cfc8b581c0086c", // https://amplitude.com/
+  umamiDataWebsiteId: "6ca6aa2c-2898-47e1-8747-6c29b3c1626c",
 };
 
 // share config
